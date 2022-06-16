@@ -643,11 +643,11 @@ const Home = () => {
           
         }}
         style={{ marginTop: "8%", paddingTop: "8%", paddingBottom: "8%" }}
-      ><TrackVisibility>
+      >
 
         <Container maxWidth="lg">
           {/* main tv */}
-          
+          <TrackVisibility>
             {({ isVisible }) =>
               isVisible ? (
                 <Grid
@@ -872,8 +872,8 @@ const Home = () => {
                 </Grid>
               )
             }
-          
-        </Container></TrackVisibility>
+          </TrackVisibility>
+        </Container>
       </Box>
 
       {/*  --------------------- blogs start ----------------------------------------*/}
