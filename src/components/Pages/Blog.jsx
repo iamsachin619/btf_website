@@ -184,8 +184,7 @@ const Blog = () => {
         sx={{
           // height: "60vh",
          width: "100%",
-          // maxHeight: { xs: 233, md: 167 },
-          // maxWidth: { xs: 350, md: 250 },
+         
         }}
         alt="The house from the offer."
         
@@ -260,8 +259,7 @@ const Blog = () => {
         sx={{
           height: "60vh",
           // width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         alt="The house from the offer."
         

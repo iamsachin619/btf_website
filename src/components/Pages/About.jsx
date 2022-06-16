@@ -175,8 +175,7 @@ const About = () => {
         sx={{
           height: "70vh",
           // width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+         
         }}
         alt="The house from the offer."
         
@@ -205,8 +204,7 @@ const About = () => {
      <Box
         sx={{
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{marginBottom:"8%",paddingTop:"8%",paddingBottom:"8%"}}
       >
@@ -254,8 +252,7 @@ const About = () => {
           // height: "130vh",
           bgcolor: PrimaryColor,
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+  
         }}
         style={{paddingTop:"8%",paddingBottom:"8%"}}
       >
@@ -287,8 +284,7 @@ const About = () => {
           // height: "130vh",
           // bgcolor: '#f5f5f5',
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{marginBottom:"5%",paddingTop:"8%",paddingBottom:"8%"}}
       >
@@ -365,8 +361,7 @@ const About = () => {
         sx={{
           // height: "50vh",
           // width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         alt="The house from the offer."
         
@@ -383,8 +378,7 @@ const About = () => {
           // height: "130vh",
           bgcolor: PrimaryColor,
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{ marginTop: "8%", paddingTop: "8%", paddingBottom: "8%" }}
       >
@@ -660,8 +654,7 @@ News & Blog </span>
         sx={{
           height: "30vh",
           width: "25vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         alt="The house from the offer."
         

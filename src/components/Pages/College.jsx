@@ -149,8 +149,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
           // height: "130vh",
           bgcolor: '#f5f5f5',
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{paddingTop:"8%",paddingBottom:"8%"}}
       >

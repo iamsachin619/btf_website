@@ -224,11 +224,7 @@ const Home = () => {
             spacing={8}
             style={{ marginTop: "12%", display: "flex", alignItems: "center" }}
           >
-            <TrackVisibility>
-              {({ isVisible }) =>
-                isVisible ? setDisplay(true) : setDisplay(false)
-              }
-            </TrackVisibility>
+            
             <Grid item xs={12} sm={12} md={8} align="left">
               <div style={{ margin: "5%" }}></div>
               <span
@@ -243,9 +239,13 @@ const Home = () => {
               >
                 Perfect IT Solutions For Your Business
                 {/* <br/> */}
+                <TrackVisibility>
+              {({ isVisible }) =>
+                isVisible ? setDisplay(true) : setDisplay(false)
+              }
+            </TrackVisibility>
               </span>
-              <br />
-              <div style={{ margin: "5%" }}></div>
+            
               <span
                 style={{
                   lineHeight: "26pt",
@@ -307,8 +307,7 @@ const Home = () => {
         sx={{
           height: "130vh",
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         alt="The house from the offer."
         
@@ -344,8 +343,7 @@ const Home = () => {
               sx={{
                 height: "50vh",
                 // width: "100vw",
-                maxHeight: { xs: 233, md: 167 },
-                maxWidth: { xs: 350, md: 250 },
+             
               }}
               alt="The house from the offer."
               src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/about.jpg"
@@ -366,8 +364,7 @@ const Home = () => {
           // height: "130vh",
           bgcolor: "#f5f5f5",
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{
           marginTop: "8%",
@@ -461,8 +458,7 @@ const Home = () => {
           // height: "130vh",
           bgcolor: PrimaryColor,
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+         
         }}
         style={{ paddingTop: "8%", paddingBottom: "8%" }}
       >
@@ -526,8 +522,7 @@ const Home = () => {
           // height: "130vh",
           // bgcolor: '#f5f5f5',
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{ marginBottom: "5%", paddingTop: "8%", paddingBottom: "8%" }}
       >
@@ -565,7 +560,7 @@ const Home = () => {
                       height: "37vh",
                       width: "100%",
                       // maxHeight: { xs: 233, md: 167 },
-                      maxWidth: { xs: 350, md: 250 },
+                      
                     }}
                   />
                   {/* </CardContent> */}
@@ -630,8 +625,7 @@ const Home = () => {
               sx={{
                 // height: "50vh",
                 // width: "100vw",
-                maxHeight: { xs: 233, md: 167 },
-                maxWidth: { xs: 350, md: 250 },
+              
               }}
               alt="The house from the offer."
               src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/test.png"
@@ -641,20 +635,19 @@ const Home = () => {
       </Container>
 
       {/* ---------------- testimonials section end --------------------- */}
-
       <Box
         sx={{
           // height: "130vh",
           bgcolor: PrimaryColor,
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{ marginTop: "8%", paddingTop: "8%", paddingBottom: "8%" }}
-      >
+      ><TrackVisibility>
+
         <Container maxWidth="lg">
           {/* main tv */}
-          <TrackVisibility>
+          
             {({ isVisible }) =>
               isVisible ? (
                 <Grid
@@ -879,8 +872,8 @@ const Home = () => {
                 </Grid>
               )
             }
-          </TrackVisibility>
-        </Container>
+          
+        </Container></TrackVisibility>
       </Box>
 
       {/*  --------------------- blogs start ----------------------------------------*/}
@@ -954,8 +947,7 @@ const Home = () => {
         sx={{
           height: "30vh",
           width: "25vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         alt="The house from the offer."
         

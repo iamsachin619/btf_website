@@ -86,8 +86,7 @@ const Home = () => {
           // height: "130vh",
           bgcolor: '#f5f5f5',
           width: "100vw",
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
+          
         }}
         style={{marginTop:"75px",paddingTop:"5%",paddingBottom:"8%"}}
       >
