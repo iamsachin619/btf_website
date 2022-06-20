@@ -129,22 +129,22 @@ export default function Footer() {
                 style={{
                   color: "black",
                   fontWeight: "bold",
-                  marginLeft: "12%",
+                  marginLeft: "7%",
                 }}
               >
                 Buythatfits
               </Typography>
               <div className="" style={{ marginLeft: "7%", marginTop: "20px" }}>
-                <Button>
+                <Button style={{minWidth: '40px'}}>
                   <Facebook style={{ color: "green" }} />
                 </Button>
-                <Button>
+                <Button style={{minWidth: '40px'}}>
                   <Instagram style={{ color: "green" }} />
                 </Button>
-                <Button>
+                <Button style={{minWidth: '40px'}}>
                   <Twitter style={{ color: "green" }} />
                 </Button>
-                <Button>
+                <Button style={{minWidth: '40px'}}>
                   <Linkedin style={{ color: "green" }} />
                 </Button>
               </div>

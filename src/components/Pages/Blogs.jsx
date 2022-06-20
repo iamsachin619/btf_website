@@ -228,7 +228,50 @@ const Blogs = () => {
           </Grid>
         </Container>
       </article>
-
+      <Container maxWidth="md">
+      {/* <div class="search" style={{width:'100%', marginTop:"30px"}}>
+        <input type="text"placeholder="Search blogs..." style={{width:'88%',paddingBottom:'8px',paddingTop:'8px'}}/>
+        <div class="button-src" style={{display: 'inline-block'}}>
+            <button style={{width:'100px',paddingBottom:'8px',paddingTop:'8px',backgroundColor:PrimaryColor,borderColor:PrimaryColor, color:'white'}}>Search</button>
+        </div>
+      </div> */}
+      <Paper
+                  component="form"
+                  elevation={0}
+                  sx={{ display: "flex", alignItems: "right", width: "100%" }}
+                  style={{ padding: "4%" }}
+                >
+                  <InputBase
+                    sx={{   }}
+                    placeholder="Search blogs... "
+                    inputProps={{ "aria-label": "Search blogs... " }}
+                    onChange={onTextChange}
+                    id="email"
+                    style={{width:'60%',
+                    paddingLeft: "15px",
+                    paddingRight: "15px",
+                    paddingTop: "15px",
+                    paddingBottom: "15px",
+                    borderBottom:'1px #cacaca solid'
+                  }}
+                  />
+                  <Button
+                  onClick={subscribe}
+                  style={{
+                    backgroundColor: PrimaryColor,
+                    color: "white",
+                    fontWeight: 600,
+                    paddingLeft: "15px",
+                    paddingRight: "15px",
+                    paddingTop: "15px",
+                    paddingBottom: "15px",
+                    marginLeft:'20px'
+                  }}
+                  size="large"
+                 
+                >Search</Button>
+                </Paper>
+</Container>
       {blogs.map((blog) => (
         <>
          <Container maxWidth="md">

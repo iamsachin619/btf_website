@@ -45,6 +45,17 @@ import { Subscribe, GetClientsReview, GetBlogs, GetComments } from "../../api";
 import Footer from "../Footer";
 import { isVisible } from "@testing-library/user-event/dist/utils";
 import PrimaryColor from "../../env";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+
+// import required modules
+import { Pagination as Pagination2,Navigation } from "swiper";
+
+
 const useStyles = makeStyles((theme) => ({
   button: {
     // backgroundColor: '#3c52b2',
@@ -164,7 +175,7 @@ const Home = () => {
       data.length !== 0 && setReviews(data);
 
       //get 2 latest blogs
-      for (let i = 1; i < 3; i++) {
+      for (let i = 1; i < 5; i++) {
         const { data } = await GetBlogs(i);
         console.log(data, "data");
         const comment = await GetComments(data.results[0].uuid);
@@ -649,16 +660,17 @@ const Home = () => {
           {/* main tv */}
           <TrackVisibility>
             {({ isVisible }) =>
+              
               isVisible ? (
-                <Grid
+                <Grid 
                   container
                   style={{ display: "flex", alignItems: "center" }}
                 >
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <PersonIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></PersonIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -683,11 +695,11 @@ const Home = () => {
                       </span>
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <AssignmentTurnedInIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></AssignmentTurnedInIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -712,11 +724,11 @@ const Home = () => {
                       </span>
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <PeopleAltIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></PeopleAltIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -741,11 +753,11 @@ const Home = () => {
                       </span>
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <FavoriteBorderIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></FavoriteBorderIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -777,11 +789,11 @@ const Home = () => {
                   container
                   style={{ display: "flex", alignItems: "center" }}
                 >
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <PersonIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></PersonIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -800,11 +812,11 @@ const Home = () => {
                       </span>
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <AssignmentTurnedInIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></AssignmentTurnedInIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -823,11 +835,11 @@ const Home = () => {
                       </span>
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <PeopleAltIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></PeopleAltIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -846,11 +858,11 @@ const Home = () => {
                       </span>
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} md={3}>
+                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
                     <FavoriteBorderIcon
                       style={{ fontSize: "400%", color: "white" }}
                     ></FavoriteBorderIcon>
-                    <div style={{ marginTop: "10%" }}>
+                    <div style={{ marginTop: "5%" }}>
                       <span
                         style={{
                           lineHeight: "16pt",
@@ -878,7 +890,7 @@ const Home = () => {
 
       {/*  --------------------- blogs start ----------------------------------------*/}
 
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Grid
           container
           spacing={9}
@@ -912,13 +924,13 @@ const Home = () => {
               to="/Blogs"
               component={Link}
             >
-              VIEW ALL NEWS
+              VIEW ALL BLOGS
             </Button>
           </Grid>
         </Grid>
       </Container>
 
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Grid
           container
           style={{
@@ -954,7 +966,145 @@ const Home = () => {
         src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/05-1.jpg"
       />
             </Grid> */}
-          <Grid item xs={12} sm={12} md={12} align="left">
+
+        <Grid item xs={12} sm={12} md={12} align="left">
+        <Swiper
+        navigation={true}
+        slidesPerView={1}
+        spaceBetween={10}
+        autoHeight={true}
+        pagination={{
+          clickable: true
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          }
+        }}
+        modules={[Pagination2,Navigation]}
+        className="mySwiper"
+      >
+        
+        {blogs.map((blog) => {
+              return (
+                <SwiperSlide>
+                <Link
+                  to={`/Blog/${blog.title}`}
+                  state={{ blog: blog }}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card
+                    sx={{
+                      display: "flex",
+                      marginTop: "35px",
+                      marginBottom: "35px",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <CardMedia
+                      component="img"
+                      sx={{}}
+                      image={blog.img1}
+                      alt="Live from space album cover"
+                    />
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        marginLeft: "4%",
+                        paddingTop: "3%",
+                        paddingBottom: "2.5%",
+                        width: "100%",
+
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: "flex",
+                          marginRight: "4%",
+                          justifyContent: "end",
+                        }}
+                      >
+                        <Typography
+                          style={{
+                            color: "grey",
+                            verticalAlign: "middle",
+                            marginRight: "3%",
+                            display: "inline-flex",
+                          }}
+                        >
+                          <span style={{ color: PrimaryColor, marginRight: "1%" }}>
+                            <PersonOutlineOutlinedIcon />
+                          </span>
+                          Buythatfits
+                        </Typography>
+                        <Typography
+                          style={{
+                            color: "grey",
+                            verticalAlign: "middle",
+                            whiteSpace: "nowrap",
+                            marginRight: "4%",
+                            display: "inline-flex",
+                          }}
+                        >
+                          <span style={{ color: PrimaryColor, marginRight: "4%" }}>
+                            <EventNoteOutlinedIcon />
+                          </span>
+                          {blog.pub_date}
+                        </Typography>
+                        <Typography
+                          style={{
+                            color: "grey",
+                            verticalAlign: "middle",
+                            display: "inline-flex",
+                          }}
+                        >
+                          <span style={{ color: PrimaryColor, marginRight: "4%" }}>
+                            <QuestionAnswerOutlinedIcon />{" "}
+                          </span>
+                          ({blog.noOfComments})
+                        </Typography>
+                      </Box>
+                      <CardContent sx={{ flex: "1 0 auto", padding: "1%" }}>
+                        <Typography
+                          style={{ fontWeight: "bold", fontSize: "150%" }}
+                        >
+                          {blog.title}
+                        </Typography>
+                        <Typography
+                          style={{ marginTop: "20px", color: "grey" }}
+                        >
+                          {blog.content}
+                        </Typography>
+                      </CardContent>
+                    </Box>
+                  </Card>
+                </Link>
+                </SwiperSlide>
+              );
+            })}
+       
+      {/* <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide>Slide 5</SwiperSlide>
+      <SwiperSlide>Slide 6</SwiperSlide>
+      <SwiperSlide>Slide 7</SwiperSlide>
+      <SwiperSlide>Slide 8</SwiperSlide>
+      <SwiperSlide>Slide 9</SwiperSlide> */}
+      </Swiper>
+         </Grid>
+
+          {/* <Grid item xs={12} sm={12} md={12} align="left">
             {blogs.map((blog) => {
               return (
                 <Link
@@ -1049,7 +1199,7 @@ const Home = () => {
                 </Link>
               );
             })}
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
 

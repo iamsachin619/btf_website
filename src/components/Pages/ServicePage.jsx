@@ -160,18 +160,6 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
           </DividerWithTextInBetween>         
         </Grid> */}
         <Grid container spacing={2}>
-          
-        <Grid className='presentService'  lg={8} style={{padding:'3%'}}>
-          <Grid  maxWidth="lg" justifyContent="left" style={{marginTop:"0%",textAlign:'left'}}>
-            <span style={{fontSize:"300%",fontWeight:600}}>{data.title}  </span>     
-          </Grid>
-          <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%"}}>
-              <img src={data.img1} style={{width:"100%",height:"100%"}}/>
-          </Grid>
-          <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%", textAlign:'justify'}}>
-              {data.content}
-          </Grid>
-        </Grid>
         <Grid className='otherService' lg={3} justifyContent="left" style={{textAlign:'left',marginLeft:'25px'}}>
           <div style={{marginTop:"20px"}}>
           <span style={{fontSize:"200%",fontWeight:400}}>Other Services  </span>  
@@ -223,7 +211,19 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
                 </Link>
                 <br />
               </span>
+        </Grid>  
+        <Grid className='presentService'  lg={8} style={{padding:'3%'}}>
+          <Grid  maxWidth="lg" justifyContent="left" style={{marginTop:"0%",textAlign:'left'}}>
+            <span style={{fontSize:"300%",fontWeight:600}}>{data.title}  </span>     
+          </Grid>
+          <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%"}}>
+              <img src={data.img1} style={{width:"100%",height:"100%"}}/>
+          </Grid>
+          <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%", textAlign:'justify'}}>
+              {data.content}
+          </Grid>
         </Grid>
+        
         
         </Grid>
       </Container>

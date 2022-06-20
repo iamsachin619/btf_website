@@ -34,6 +34,10 @@ import CommentForm from "../CommentForm";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { responsiveProperty } from "@mui/material/styles/cssUtils";
 import PrimaryColor from "../../env";
+import Markdown from 'markdown-to-jsx';
+
+
+
 const useStyles = makeStyles({
   button: {
     // backgroundColor: '#3c52b2',
@@ -102,6 +106,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+
+
 const Blog = () => {
 
   const [blog, setBlog] = useState(null)
@@ -111,10 +117,27 @@ const Blog = () => {
   const { title } = useParams();
   const location = useLocation()
   const classes = useStyles()
+  const [markData, setMarkData] = useState('')
+
 
   useEffect(() => {
+    
+      fetch('https://raw.githubusercontent.com/matiassingers/awesome-readme/master/readme.md')
+      .then(response => response.text())
+      .then(data => {
+        // Do something with your data
+        setMarkData(data);
+      });
+    });
+
+
+  useEffect(() => {
+
+  
+
     console.log(location.state.blog)
     setBlog(location.state.blog)
+    document.getElementById('blog-post-bg').backgroundImage = location.state.blog.img1
     const fetchData = async () => {
       const resp = await GetComments(location.state.blog.uuid)
       if(resp.status === 200)   
@@ -147,6 +170,8 @@ const Blog = () => {
     
     <div>
     <article
+    className="blog-post-bg"
+    id='blog-post-bg'
       style={{
         marginTop:"5%",
         height: "50vh",
@@ -155,7 +180,8 @@ const Blog = () => {
     backgroundSize: "cover",
     display: "grid",
     placeItems: "center",
-    backgroundImage: `url("https://blog.wiser.com/wp-content/uploads/2015/08/how-buy-one-get-one-can-improve-sales-1074x302@2xC-1296x364.png")`
+    backgroundImage:blog?`url(${blog.img1})`:'url()',
+    boxShadow:'inset 0 0 0 2000px rgba(0, 0, 0, 0.6)'
       }}
     >
       <Container maxWidth="lg">
@@ -175,7 +201,11 @@ const Blog = () => {
 
 {blog !== null && 
 <>
-
+<Container maxWidth="lg">
+  <div style={{textAlign:'left'}}>
+    <Markdown>{markData}</Markdown>
+  </div>
+</Container>
 <Container maxWidth="lg">
       <Grid container spacing={8} style={{marginTop:"8%",display: "flex", alignItems: "center" }}>
       <Grid item xs={12} sm={12} md={12}>
@@ -190,19 +220,23 @@ const Blog = () => {
         
         src={blog.img1}
       />
+     
             </Grid>
             </Grid>
       </Container>
 
       <Container maxWidth="md">
+      
       <Grid container spacing={4} style={{display: "flex", alignItems: "center" }}>
       <Grid item xs={12} sm={12} md={4}></Grid>
       <Grid item xs={12} sm={12} md={8}>
       <Box sx={{ display: 'flex'}}>
+      
       <Typography
                 style={{color:"grey",verticalAlign: 'middle',marginRight:"3%",
                 display: 'inline-flex'}}
             >
+              
                  <span style={{color:PrimaryColor,marginRight:"1%"}}><PersonOutlineOutlinedIcon/></span> 
                  {blog.category}
               </Typography>
@@ -224,8 +258,8 @@ const Blog = () => {
                         </Grid>
 
       </Container>
-      
-      <Container maxWidth="md" >
+     
+      {/* <Container maxWidth="md" >
         <Grid container maxWidth="xs" justifyContent="center" style={{marginTop:"3%"}}>
           <span style={{fontSize:"300%",fontWeight:600}}>
           {blog.title}
@@ -267,7 +301,7 @@ const Blog = () => {
       />
             </Grid>
             </Grid>
-      </Container>
+      </Container> */}
 
       <Container maxWidth="md" >
         <Grid container maxWidth="xs" justifyContent="center" 
