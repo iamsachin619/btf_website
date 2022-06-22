@@ -160,7 +160,9 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
           </DividerWithTextInBetween>         
         </Grid> */}
         <Grid container spacing={2}>
-        <Grid className='otherService' lg={3} justifyContent="left" style={{textAlign:'left',marginLeft:'25px'}}>
+          {
+            isMobile?'':(
+              <Grid className='otherService' lg={3} justifyContent="left" style={{textAlign:'left',marginLeft:'25px'}}>
           <div style={{marginTop:"20px"}}>
           <span style={{fontSize:"200%",fontWeight:400}}>Other Services  </span>  
           </div>
@@ -211,7 +213,10 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
                 </Link>
                 <br />
               </span>
-        </Grid>  
+        </Grid> 
+            )
+          }
+        
         <Grid className='presentService'  lg={8} style={{padding:'3%'}}>
           <Grid  maxWidth="lg" justifyContent="left" style={{marginTop:"0%",textAlign:'left'}}>
             <span style={{fontSize:"300%",fontWeight:600}}>{data.title}  </span>     
@@ -224,10 +229,66 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
           </Grid>
         </Grid>
         
+        {/* for other services of mobile */}
+        {isMobile?(<Grid className='otherService' lg={3} justifyContent="center" style={{textAlign:'left',marginLeft:'25px'}}>
+          <div style={{marginTop:"20px"}}>
+          <span style={{fontSize:"200%",fontWeight:400}}>Other Services  </span>  
+          </div>
+          <div style={{ marginTop: "8%", marginBottom: "3%" }}>
+                <DividerWithText />
+              </div>
+          <span style={{ lineHeight: "26pt" }}>
+                <Link
+                  to="/service/Marketing"
+                  style={{ textDecoration: "none", color: path=="/service/Marketing"?"blue":'black' }}
+                >
+                  Marketing Strategy
+                </Link>
+                <br />
+                <Link
+                  to="/service/Analysis"
+                  style={{ textDecoration: "none", color: path=="/service/Analysis"?"blue":'black' }}
+                >
+                  Analysis For Tools
+                </Link>
+                <br />
+                <Link
+                  to="/service/UI"
+                  style={{ textDecoration: "none", color:  path=="/service/UI"?"blue":'black' }}
+                >
+                  UX/UI Strategy
+                </Link>
+                <br />
+                <Link
+                  to="/service/Server"
+                  style={{ textDecoration: "none", color:  path=="/service/Server"?"blue":'black'}}
+                >
+                  Server Security
+                </Link>
+                <br />
+                <Link
+                  to="/service/Database"
+                  style={{ textDecoration: "none", color:  path=="/service/Database"?"blue":'black'}}
+                >
+                  Database Analysis
+                </Link>
+                <br />
+                <Link
+                  to="/service/Web"
+                  style={{ textDecoration: "none", color:  path=="/service/Web"?"blue":'black' }}
+                >
+                  Web Development
+                </Link>
+                <br />
+              </span>
+        </Grid> ):''
+        }
         
         </Grid>
       </Container>
       </Box>
+      {/* for home and about */}
+
         {isMobile ? (
           <Grid container justify="space-between">
             <Grid item>

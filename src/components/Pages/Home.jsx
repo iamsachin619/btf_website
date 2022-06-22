@@ -54,6 +54,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination as Pagination2,Navigation } from "swiper";
+import ProjectCard from "../ProjectCard";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -167,8 +168,19 @@ const Home = () => {
     {
       src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/06.jpg",
     },
+    {
+      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/06.jpg",
+    },
+    {
+      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/06.jpg",
+    },
   ];
 
+  const reviewTestImg = [
+    'https://source.unsplash.com/600x400/?computer',
+    'https://source.unsplash.com/600x400/?client',
+    'https://source.unsplash.com/600x400/?public'
+  ]
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await GetClientsReview();
@@ -557,27 +569,39 @@ const Home = () => {
             align="left"
             style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
           >
+            <Swiper
+        
+        slidesPerView={1}
+        spaceBetween={10}
+        autoHeight={true}
+        pagination={{
+          clickable: true
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          1024: {
+            slidesPerView:3,
+            spaceBetween: 20
+          }
+        }}
+        modules={[Pagination2,Navigation]}
+        className="mySwiperCase"
+      >
             {caseStudyCards.map((card) => (
-              <Grid item xs={12} sm={6} md={4}>
-                <Card
-                  maxWidth="lg"
-                  style={{ boxShadow: "none", borderRadius: 0 }}
-                >
-                  {/* <CardContent> */}
-                  <Box
-                    component="img"
-                    src={card.src}
-                    sx={{
-                      height: "37vh",
-                      width: "100%",
-                      // maxHeight: { xs: 233, md: 167 },
-                      
-                    }}
-                  />
-                  {/* </CardContent> */}
-                </Card>
-              </Grid>
+              <SwiperSlide>
+              
+                <ProjectCard/>
+          
+              </SwiperSlide>
             ))}
+            </Swiper>
           </Grid>
         </Container>
       </Box>
@@ -639,7 +663,7 @@ const Home = () => {
               
               }}
               alt="The house from the offer."
-              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/test.png"
+              src={reviewTestImg[index]}
             />
           </Grid>
         </Grid>
