@@ -203,7 +203,8 @@ const Blog = () => {
 <>
 <Container maxWidth="lg">
   <div style={{textAlign:'left'}}>
-    <Markdown>{markData}</Markdown>
+    {/* <Markdown>{markData}</Markdown> */}
+    <Markdown>{blog.content}</Markdown>
   </div>
 </Container>
 <Container maxWidth="lg">

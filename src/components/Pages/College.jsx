@@ -85,12 +85,12 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 
     const servicesCards = [
-      {title:"Marketing Strategy",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-6.png",slug:'Marketing'},
-      {title:"Analysis For Tools",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-5.png",slug:'Analysis'},
-      {title:"UX/UI Strategy",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-4.png",slug:'UI'},
-      {title:"Server Security",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",slug:'Server'},
-      {title:"Database Analysis",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",slug:'Database'},
-      {title:"Web Development",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-01.jpg",slug:'Web'},
+      {title:"Technical Consultation",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-6.png",slug:'TC'},
+      {title:"Web Solution",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-5.png",slug:'WebSolution'},
+      {title:"UI/UX services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-4.png",slug:'UI'},
+      {title:"Python Scripting",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",slug:'Python'},
+      {title:"Testing Services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",slug:'Testing'},
+      // {title:"Web Development",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-01.jpg",slug:'Web'},
      ];
      const classes = useStyles()
     const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -130,7 +130,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
       }}
     >
       <Container maxWidth="lg">
-      <Grid container spacing={8} style={{display: "flex", alignItems: "center" }}>
+      <Grid container  style={{display: "flex", alignItems: "center" }}>
             <Grid item xs={12} sm={12} md={12} align="center">
             <div style={{margin:"5%"}}></div>
                   <span style={{color:"white",fontSize:"350%",fontWeight:"bold"}}>
@@ -163,7 +163,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
         <Grid container maxWidth="lg" justifyContent="center" style={{marginTop:"3%"}}>
           <span style={{fontSize:"300%",fontWeight:600}}>We provide exclusive services <br/> for your bussiness  </span>     
         </Grid>
-      <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "center" }}>
+      <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "center" , justifyContent:'center'}}>
       {servicesCards.map( card => (
             <Grid item xs={12} sm={6} md={4} align="center">
             

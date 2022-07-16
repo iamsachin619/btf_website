@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { NavLink } from 'react-router-dom';
-const cards = [{name:"Marketing Strategy",slug:'Marketing'},{name:"Analysis For Tools",slug:'Analysis'},{name:"UX/UI Strategy",slug:'UI'},{name:"Server Security",slug:'Server'},{name:"Database Analysis",slug:'Database'},{name:"Web Development" ,slug:'Web'}];
+const cards = [{name:"Technical Consultation",slug:'Marketing'},{name:"Web Solution",slug:'Analysis'},{name:"UI/UX services",slug:'UI'},{name:"Python Scripting",slug:'Server'},{name:"Testing Services",slug:'Database'},{name:"Web Development" ,slug:'Web'}];
 
 
 function PricingContent() {

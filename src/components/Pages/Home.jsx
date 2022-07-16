@@ -127,37 +127,13 @@ const Home = () => {
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const servicesCards = [
-    {
-      title: "Marketing Strategy",
-      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-6.png",
-      slug: "Marketing",
-    },
-    {
-      title: "Analysis For Tools",
-      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-5.png",
-      slug: "Analysis",
-    },
-    {
-      title: "UX/UI Strategy",
-      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-4.png",
-      slug: "UI",
-    },
-    {
-      title: "Server Security",
-      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",
-      slug: "Server",
-    },
-    {
-      title: "Database Analysis",
-      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",
-      slug: "Database",
-    },
-    {
-      title: "Web Development",
-      src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-01.jpg",
-      slug: "Web",
-    },
-  ];
+    {title:"Technical Consultation",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-6.png",slug:'TC'},
+    {title:"Web Solution",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-5.png",slug:'WebSolution'},
+    {title:"UI/UX services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-4.png",slug:'UI'},
+    {title:"Python Scripting",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",slug:'Python'},
+    {title:"Testing Services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",slug:'Testing'},
+    // {title:"Web Development",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-01.jpg",slug:'Web'},
+   ];
   const caseStudyCards = [
     {
       src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/06.jpg",
@@ -244,7 +220,7 @@ const Home = () => {
         <Container maxWidth="lg">
           <Grid
             container
-            spacing={8}
+            //spacing={8}
             style={{ marginTop: "12%", display: "flex", alignItems: "center" }}
           >
             
@@ -252,15 +228,15 @@ const Home = () => {
               <div style={{ margin: "5%" }}></div>
               <span
                 style={{
-                  lineHeight: "66pt",
+                 
                   color: "white",
-                  fontSize: "500%",
+                  fontSize: "400%",
                   fontWeight: "bold",
                   opacity: display ? "1" : "0",
                 }}
                 className="displayAnimated"
               >
-                Perfect IT Solutions For Your Business
+                Moving Human<br /> Experience Forward!
                 {/* <br/> */}
                 <TrackVisibility>
               {({ isVisible }) =>
@@ -278,8 +254,9 @@ const Home = () => {
                 }}
                 className="displayAnimated"
               >
-                Sed ut perspiciatis unde omnis iste natus error sit <br />{" "}
-                voluplatem accusantiuk doloremque
+                We help you deliver growth-driven experiences to your users.
+ <br />{" "}
+             
               </span>
               <div style={{ margin: "5%" }}></div>
 
@@ -302,7 +279,7 @@ const Home = () => {
                 component={Link}
                 to="/About"
               >
-                LEARN MORE
+                Book a 30 Minute Consultation. 
               </Button>
               {/* <div style={{marginLeft:"5%"}}> */}
               <Link
@@ -340,46 +317,91 @@ const Home = () => {
       <Container maxWidth="lg">
         <Grid
           container
-          spacing={8}
+          //spacing={8}
           style={{ marginTop: "8%", display: "flex", alignItems: "center" }}
         >
-          <Grid item xs={12} sm={12} md={4} align="left">
+          <Grid item xs={12} sm={12} md={7} align="left">
             {/* <Typography>  */}
             <DividerWithText >WHO WE ARE</DividerWithText>
             <div style={{ margin: "5%" }}></div>
             {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
             <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
-              More than 23+ years we provide <br />
+              More than 23+ years we provide 
               <span style={{ color: PrimaryColor}}> IT solutions </span>{" "}
             </span>{" "}
             <br /> <br />
             <span style={{ lineHeight: "26pt" }}>
-              Sedut perspiciatis unde omnis iste natus error sitlupt tem
-              accusantium doloremque laudantium totam remap eriaeaque ipsa quae
-              ab illo inventore veritatis
+            We are a Web Development and UI/UX design company that innovates user experience by incorporating research and user-centric innovations.
             </span>
             {/* </Typography> */}
           </Grid>
-          <Grid item xs={12} sm={12} md={4}>
+          <Grid item xs={12} sm={12} md={5}>
             <Box
               component="img"
               sx={{
                 height: "50vh",
                 // width: "100vw",
+                margin:"20px"
              
               }}
               alt="The house from the offer."
               src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/about.jpg"
+
             />
           </Grid>
-          <Grid item xs={12} sm={12} md={4} align="left">
+          {/* <Grid item xs={12} sm={12} md={4} align="left">
             <span style={{ lineHeight: "26pt" }}>
-              {/* But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete acount of the system, and expound the actual teacings of the great explorer of the truth, titer-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter */}
+              
             </span>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
 
+      <Container maxWidth="lg">
+        <Grid
+          container
+          //spacing={8}
+          style={{ marginTop: "8%", display: "flex", alignItems: "center" }}
+        >
+          <Grid item xs={12} sm={12} md={5}>
+            <Box
+              component="img"
+              sx={{
+                height: "50vh",
+                // width: "100vw",
+                margin:"20px"
+             
+              }}
+              alt="The house from the offer."
+              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/about.jpg"
+
+            />
+          </Grid>
+          <Grid item xs={12} sm={12} md={7} align="left">
+            {/* <Typography>  */}
+            {/* <DividerWithText >WHO WE ARE</DividerWithText> */}
+            <div style={{ margin: "5%" }}></div>
+            {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
+            <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
+            Why choose  <span style={{ color: PrimaryColor}}>Relish</span> as your Website Development and UI/UX Company?
+              {/* <span style={{ color: PrimaryColor}}> IT solutions </span>{" "} */}
+            </span>{" "}
+            <br /> <br />
+            <span style={{ lineHeight: "26pt" }}>
+            Take advantage of our expertise. Build your Brand Equity and Business online. Take your Marketing & Business ideas to life & turn them into a profitable and growing business with the best Website Development and UI/UX company!
+            </span>
+            {/* </Typography> */}
+          </Grid>
+          
+          {/* <Grid item xs={12} sm={12} md={4} align="left">
+            <span style={{ lineHeight: "26pt" }}>
+              
+            </span>
+          </Grid> */}
+        </Grid>
+      </Container>
+
+      
       {/* ------services section ------------------ */}
 
       <Box
@@ -410,35 +432,27 @@ const Home = () => {
               We provide exclusive services <br /> for your bussiness{" "}
             </span>
           </Grid>
-          <Grid
-            container
-            align="left"
-            spacing={4}
-            style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
-          >
-            {servicesCards.map((card) => (
-              <Grid item xs={12} sm={6} md={4} align="center">
-                <Card
-                  maxWidth="lg"
-                  style={{ padding: "5%", boxShadow: "none", borderRadius: 10 }}
-                >
-                  <CardContent>
-                    <Box
-                      component="img"
-                      src={card.src}
-                      style={{ marginTop: "8%", marginBottom: "8%" }}
-                    />
-                    <Box style={{ marginBottom: "8%" }}>
-                      <Typography variant="h5" style={{ fontWeight: "bolder" }}>
-                        {card.title}
-                      </Typography>
-                    </Box>
-                    {/* <ul> */}
-                    <span style={{ lineHeight: "26pt" }}>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking.
-                    </span>
-                    {/* {card.description.map((line) => (
+          <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "center" , justifyContent:'center'}}>
+      {servicesCards.map( card => (
+            <Grid item xs={12} sm={6} md={4} align="center">
+            
+              <Card maxWidth="lg" style={{padding:"5%",boxShadow: "none",borderRadius:10}}>
+              <CardContent>
+              <Box
+                component="img"
+                src={card.src}
+                style={{marginTop:"8%",marginBottom:"8%"}}
+              />
+                <Box style={{marginBottom:"8%"}}>
+                  <Typography variant="h5" style={{fontWeight:"bolder"}}>
+                    {card.title}
+                  </Typography>
+                </Box>
+                {/* <ul> */}
+                <span style={{lineHeight:"26pt"}}>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking.
+                </span>
+                  {/* {card.description.map((line) => (
                     <Typography
                       component="li"
                       variant="subtitle1"
@@ -448,29 +462,22 @@ const Home = () => {
                       {line}
                     </Typography>
                   ))} */}
-                    {/* </ul> */}
-                  </CardContent>
-                  <CardActions>
-                    <Grid container justify="center">
-                      <NavLink
-                        to={`/service/${card.slug}`}
-                        style={{ width: "100%", textDecoration: "none" }}
-                      >
-                        <Button
-                          className={classes.button}
-                          size="large"
-                          variant="outlined"
-                          endIcon={<ArrowRightAltIcon />}
-                        >
-                          Read More
-                        </Button>
-                      </NavLink>
-                    </Grid>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+                {/* </ul> */}
+              </CardContent>
+              <CardActions>
+                <Grid container justify="center">
+                  <NavLink to={`/service/${card.slug}`} style={{width:'100%', textDecoration:'none'}}>
+                      <Button className={classes.button} size="large" variant="outlined" endIcon={<ArrowRightAltIcon />}>
+                        Read More
+                      </Button>
+                  </NavLink>
+                </Grid>
+              </CardActions>
+            </Card>
+            
+            </Grid>
+      ))}
+      </Grid>
         </Container>
       </Box>
 
@@ -498,16 +505,13 @@ const Home = () => {
                 Let’s Talk About Business Solutions With Us
               </span>
             </Grid>
-            <Grid item xs={6} sm={6} md={3} align="right">
+            <Grid item xs={12} sm={12} md={3} align="right">
               <Button
                 style={{
                   backgroundColor: "white",
                   color: "black",
                   fontWeight: 600,
-                  paddingLeft: "12%",
-                  paddingRight: "12%",
-                  paddingTop: "6%",
-                  paddingBottom: "6%",
+                  
                 }}
                 size="large"
                 variant="outlined"
@@ -518,15 +522,15 @@ const Home = () => {
                 JOIN WITH US
               </Button>
             </Grid>
-            <Grid item xs={6} sm={6} md={3} align="center">
+            <Grid item xs={12} sm={12} md={3} align="center">
               <Button
                 style={{
                   color: "white",
                   fontWeight: 600,
-                  paddingLeft: "12%",
-                  paddingRight: "12%",
-                  paddingTop: "6%",
-                  paddingBottom: "6%",
+                  // paddingLeft: "12%",
+                  // paddingRight: "12%",
+                  // paddingTop: "6%",
+                  // paddingBottom: "6%",
                 }}
                 size="large"
                 startIcon={<PhoneEnabledOutlinedIcon />}
@@ -565,7 +569,7 @@ const Home = () => {
           </Grid>
           <Grid
             container
-            spacing={4}
+            //spacing={4}
             align="left"
             style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
           >
@@ -613,7 +617,7 @@ const Home = () => {
       <Container maxWidth="lg">
         <Grid
           container
-          spacing={9}
+          //spacing={9}
           style={{ display: "flex", alignItems: "center" }}
         >
           <Grid item xs={12} sm={6} md={6} align="left">
@@ -917,7 +921,7 @@ const Home = () => {
       <Container maxWidth="lg">
         <Grid
           container
-          spacing={9}
+          //spacing={9}
           style={{
             marginTop: "6%",
             marginBottom: "3%",
@@ -943,6 +947,7 @@ const Home = () => {
                 paddingRight: "10%",
                 paddingTop: "5%",
                 paddingBottom: "5%",
+                float: 'right',
               }}
               endIcon={<ArrowRightAltIcon />}
               to="/Blogs"
@@ -993,7 +998,7 @@ const Home = () => {
 
         <Grid item xs={12} sm={12} md={12} align="left">
         <Swiper
-        navigation={true}
+        navigation={false}
         slidesPerView={1}
         spaceBetween={10}
         autoHeight={true}

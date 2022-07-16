@@ -27,6 +27,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
   import HomeIcon from "@material-ui/icons/Home";
   import PersonIcon from "@material-ui/icons/Person";
   import Footer from "../Footer";
+  import Markdown from 'markdown-to-jsx';
   import {
     Facebook,
     GooglePlus,
@@ -129,17 +130,17 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
       }}
     >
       <Container maxWidth="lg">
-      <Grid container spacing={8} style={{display: "flex", alignItems: "center" }}>
-            <Grid item xs={12} sm={12} md={12} align="center">
-            <div style={{margin:"5%"}}></div>
-                  <span style={{color:"white",fontSize:"350%",fontWeight:"bold"}}>
+          <Grid container spacing={5} style={{display: "flex", alignItems: "center" }}>
+         
+            
+                  {/* <span style={{color:"white",fontSize:"350%",fontWeight:"bold"}}>
                     {data.title}
                   </span> 
                   <div style={{margin:"1%"}}></div>
                   <span style={{color:"white",fontSize:"120%",fontWeight:"bold"}}>
                     Home || Services || {data.title}
                   </span> 
-            </Grid>
+                  */}
           </Grid>
       </Container>
     </article>
@@ -171,38 +172,38 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
               </div>
           <span style={{ lineHeight: "26pt" }}>
                 <Link
-                  to="/service/Marketing"
-                  style={{ textDecoration: "none", color: path=="/service/Marketing"?"blue":'black' }}
+                  to="/service/TC"
+                  style={{ textDecoration: "none", color: path=="/service/TC"?"blue":'black' }}
                 >
-                  Marketing Strategy
+                  Technical Consultation
                 </Link>
                 <br />
                 <Link
-                  to="/service/Analysis"
-                  style={{ textDecoration: "none", color: path=="/service/Analysis"?"blue":'black' }}
+                  to="/service/WebSolution"
+                  style={{ textDecoration: "none", color: path=="/service/WebSolution"?"blue":'black' }}
                 >
-                  Analysis For Tools
+                  Web Solution
                 </Link>
                 <br />
                 <Link
                   to="/service/UI"
                   style={{ textDecoration: "none", color:  path=="/service/UI"?"blue":'black' }}
                 >
-                  UX/UI Strategy
+                  UI/UX services
                 </Link>
                 <br />
                 <Link
-                  to="/service/Server"
-                  style={{ textDecoration: "none", color:  path=="/service/Server"?"blue":'black'}}
+                  to="/service/Python"
+                  style={{ textDecoration: "none", color:  path=="/service/Python"?"blue":'black'}}
                 >
-                  Server Security
+                  Python Scripting
                 </Link>
                 <br />
                 <Link
-                  to="/service/Database"
-                  style={{ textDecoration: "none", color:  path=="/service/Database"?"blue":'black'}}
+                  to="/service/Testing"
+                  style={{ textDecoration: "none", color:  path=="/service/Testing"?"blue":'black'}}
                 >
-                  Database Analysis
+                  Testing Services
                 </Link>
                 <br />
                 <Link
@@ -217,15 +218,19 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
             )
           }
         
-        <Grid className='presentService'  lg={8} style={{padding:'3%'}}>
-          <Grid  maxWidth="lg" justifyContent="left" style={{marginTop:"0%",textAlign:'left'}}>
+        <Grid className='presentService'  lg={8} style={{padding:'3%', paddingTop:'0px'}}>
+          {/* <Grid  maxWidth="lg" justifyContent="left" style={{marginTop:"0%",textAlign:'left'}}>
             <span style={{fontSize:"300%",fontWeight:600}}>{data.title}  </span>     
-          </Grid>
-          <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%"}}>
+          </Grid> */}
+          {/* <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%"}}>
               <img src={data.img1} style={{width:"100%",height:"100%"}}/>
-          </Grid>
+          </Grid> */}
           <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%", textAlign:'justify'}}>
-              {data.content}
+            {data.content.split('\n').map((text)=>{
+             
+              return (<div style={{marginBottom:'15px'}}><Markdown>{text}</Markdown></div>)
+            })}
+             
           </Grid>
         </Grid>
         
@@ -239,38 +244,38 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
               </div>
           <span style={{ lineHeight: "26pt" }}>
                 <Link
-                  to="/service/Marketing"
-                  style={{ textDecoration: "none", color: path=="/service/Marketing"?"blue":'black' }}
+                  to="/service/TC"
+                  style={{ textDecoration: "none", color: path=="/service/TC"?"blue":'black' }}
                 >
-                  Marketing Strategy
+                  Technical Consultation
                 </Link>
                 <br />
                 <Link
-                  to="/service/Analysis"
-                  style={{ textDecoration: "none", color: path=="/service/Analysis"?"blue":'black' }}
+                  to="/service/WebSolution"
+                  style={{ textDecoration: "none", color: path=="/service/WebSolution"?"blue":'black' }}
                 >
-                  Analysis For Tools
+                  Web Solution
                 </Link>
                 <br />
                 <Link
                   to="/service/UI"
                   style={{ textDecoration: "none", color:  path=="/service/UI"?"blue":'black' }}
                 >
-                  UX/UI Strategy
+                  UI/UX services
                 </Link>
                 <br />
                 <Link
-                  to="/service/Server"
-                  style={{ textDecoration: "none", color:  path=="/service/Server"?"blue":'black'}}
+                  to="/service/Python"
+                  style={{ textDecoration: "none", color:  path=="/service/Python"?"blue":'black'}}
                 >
-                  Server Security
+                  Python Scripting
                 </Link>
                 <br />
                 <Link
-                  to="/service/Database"
-                  style={{ textDecoration: "none", color:  path=="/service/Database"?"blue":'black'}}
+                  to="/service/Testing"
+                  style={{ textDecoration: "none", color:  path=="/service/Testing"?"blue":'black'}}
                 >
-                  Database Analysis
+                  Testing Services
                 </Link>
                 <br />
                 <Link

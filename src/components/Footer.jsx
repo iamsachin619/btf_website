@@ -116,11 +116,11 @@ export default function Footer() {
           width: "100vw",
           
         }}
-        style={{ paddingTop: "5%", paddingBottom: "5%" }}
+        style={{ paddingTop: "20px", paddingBottom: "5%" }}
       >
         <Container maxWidth="lg">
           <Grid container spacing={0} style={{ display: "flex" }}>
-            <Grid item xs={12} sm={6} md={3} align="left">
+            <Grid item xs={12} sm={6} md={3} align="left" style={{marginTop:'30px'}}>
               <Typography
                 variant="h4"
                 component="p"
@@ -129,12 +129,12 @@ export default function Footer() {
                 style={{
                   color: "black",
                   fontWeight: "bold",
-                  marginLeft: "7%",
+                  //marginLeft: "7%",
                 }}
               >
                 Buythatfits
               </Typography>
-              <div className="" style={{ marginLeft: "7%", marginTop: "20px" }}>
+              <div className="" style={{ marginTop: "20px" }}>
                 <Button style={{minWidth: '40px'}}>
                   <Facebook style={{ color: "green" }} />
                 </Button>
@@ -149,17 +149,17 @@ export default function Footer() {
                 </Button>
               </div>
             </Grid>
-            <Grid item xs={12} sm={6} md={3} align="left">
+            <Grid item xs={12} sm={6} md={3} align="left" style={{marginTop:'30px'}}>
               {/* <Typography>  */}
               <span style={{ fontWeight: 600, fontSize: "150%" }}>
                 Contact Us
               </span>
-              <div style={{ marginTop: "8%" }}>
+              <div style={{ marginTop: "8%",marginBottom: "8%" }}>
                 <DividerWithText />
               </div>
 
-              <div style={{ marginTop: "10%", marginBottom: "6%" }}></div>
-
+              
+              
               <Button
                 disableRipple
                 style={{
@@ -172,6 +172,7 @@ export default function Footer() {
                   /Buythatfits <br />{" "}
                 </span>
               </Button>
+              <div style={{ margin: "3%" }}></div>
               <Button
                 disableRipple
                 style={{ backgroundColor: "transparent" }}
@@ -210,7 +211,7 @@ export default function Footer() {
                 </span>
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6} md={3} align="left">
+            <Grid item xs={12} sm={6} md={3} align="left" style={{marginTop:'30px'}}>
               {/* <Typography>  */}
               <span style={{ fontWeight: 600, fontSize: "150%" }}>
                 Our Services
@@ -221,38 +222,38 @@ export default function Footer() {
 
               <span style={{ lineHeight: "26pt" }}>
                 <Link
-                  to="/service/Marketing"
+                  to="/service/TC"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Marketing Strategy
+                  Technical Consultation
                 </Link>
                 <br />
                 <Link
-                  to="/service/Analysis"
+                  to="/service/WebSolution"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Analysis For Tools
+                  Web Solution
                 </Link>
                 <br />
                 <Link
                   to="/service/UI"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  UX/UI Strategy
+                  UI/UX services
                 </Link>
                 <br />
                 <Link
-                  to="/service/Server"
+                  to="/service/Python"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Server Security
+                  Python Scripting
                 </Link>
                 <br />
                 <Link
-                  to="/service/Database"
+                  to="/service/Testing"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Database Analysis
+                  Testing Services
                 </Link>
                 <br />
                 <Link
@@ -264,7 +265,7 @@ export default function Footer() {
                 <br />
               </span>
             </Grid>
-            <Grid item xs={12} sm={6} md={3} align="left">
+            <Grid item xs={12} sm={6} md={3} align="left" style={{marginTop:'30px'}}>
               <Box component="form" noValidate autoComplete="off">
                 <Paper
                   component="form"

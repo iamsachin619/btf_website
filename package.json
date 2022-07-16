@@ -26,6 +26,7 @@
     "react-on-screen": "^2.1.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "react-tag-input": "^6.8.0",
     "remark-gfm": "^3.0.1",
     "swiper": "^8.2.4",
     "web-vitals": "^2.1.0"

@@ -41,9 +41,15 @@ import {
   Twitter,
 } from "@trejgun/material-ui-icons-social-networks";
 import { Link } from "react-router-dom";
+import HailIcon from '@mui/icons-material/Hail';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import GroupsIcon from '@mui/icons-material/Groups';
 import { Subscribe, GetClientsReview, GetComments, GetBlogs } from "../../api";
 import Footer from "../Footer";
 import PrimaryColor from "../../env";
+import Numbers from "../Numbers";
+
 
 const useStyles = makeStyles({
   button: {
@@ -101,11 +107,11 @@ const About = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const servicesCards = [
     {
-      title: "Server Security",
+      title: "Python Scripting",
       src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",
     },
     {
-      title: "Database Analysis",
+      title: "Testing Services",
       src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",
     },
     {
@@ -185,7 +191,6 @@ const About = () => {
         <Container maxWidth="lg">
           <Grid
             container
-            spacing={8}
             style={{ display: "flex", alignItems: "center" }}
           >
             <Grid item xs={12} sm={12} md={12} align="center">
@@ -204,6 +209,7 @@ const About = () => {
           </Grid>
         </Container>
       </article>
+      {/* what is relish */}
       <Container maxWidth="lg">
         <Grid
           container
@@ -222,28 +228,22 @@ const About = () => {
             />
           </Grid>
           <Grid item xs={12} sm={12} md={6} align="left">
-            <DividerWithText>WHO WE ARE</DividerWithText>
+            <DividerWithText>
+              {/* text here */}
+            </DividerWithText>
             <div style={{ margin: "5%" }}></div>
             {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
             <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
-              More than 23+ years we provide
-              <span style={{ color: PrimaryColor }}> IT solutions </span>{" "}
+            What is 
+              <span style={{ color: PrimaryColor }}> Relish</span>{" "}?
             </span>{" "}
-            <br /> <br />
+            <br/><br/>
             <span style={{ lineHeight: "26pt" }}>
-              Sed ut perspiciatis unde omnis iste natus errorsit voluptatem
-              accusantium doloremque laudantium totam rem aperiam eaque ipsa
-              quae ab illo invetore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem.
+            Relish, a professionally managed fast growing IT Company offering cutting edge IT solutions for small and medium enterprises for the last five years. We are among the revolutionary web marketing and software development companies in India catering to diverse needs of small and medium business enterprises. We have delivered a wide category of projects across diverse solutions including E-Commerce, Dynamic Website, and Static Websites for diverse businesses including Real Estate, Media & Entertainment, Finance, NGOs, Education, Culture etc
               <br />
-              <br />
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem
+             
             </span>
-            <Button
+            {/* <Button
               style={{
                 marginTop: "5%",
                 paddingLeft: "7%",
@@ -258,659 +258,252 @@ const About = () => {
               endIcon={<ArrowRightAltIcon />}
             >
               Learn More
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
       </Container>
 
-      {/* ------services section ------------------ */}
-
-      <Box
-        sx={{
-          width: "100vw",
-        }}
-        style={{ marginBottom: "8%", paddingTop: "8%", paddingBottom: "8%" }}
-      >
-        <Container maxWidth="lg">
-          <Grid
-            container
-            align="left"
-            spacing={4}
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            {servicesCards.map((card) => (
-              <Grid item xs={12} sm={6} md={4} align="center">
-                <Card
-                  maxWidth="lg"
-                  style={{ padding: "5%", boxShadow: "none", borderRadius: 10 }}
-                >
-                  <CardContent>
-                    <Box
-                      component="img"
-                      src={card.src}
-                      style={{ marginTop: "8%", marginBottom: "8%" }}
-                    />
-                    <Box style={{ marginBottom: "8%" }}>
-                      <Typography variant="h5" style={{ fontWeight: "bolder" }}>
-                        {card.title}
-                      </Typography>
-                    </Box>
-                    <span style={{ lineHeight: "26pt" }}>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking.
-                    </span>
-                  </CardContent>
-                  <CardActions>
-                    <Grid container justify="center">
-                      <Button
-                        className={classes.button}
-                        size="large"
-                        variant="outlined"
-                        endIcon={<ArrowRightAltIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </Grid>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* ----------------- services section end ----------------- */}
-
-      <Box
-        sx={{
-          // height: "130vh",
-          bgcolor: PrimaryColor,
-          width: "100vw",
-        }}
-        style={{ paddingTop: "8%", paddingBottom: "8%" }}
-      >
-        <Container maxWidth="lg">
-          <Grid container style={{ display: "flex", alignItems: "center" }}>
-            <Grid item xs={12} sm={12} md={6} align="left">
-              <span
-                style={{
-                  fontSize: "280%",
-                  fontWeight: "bolder",
-                  color: "white"
-                }}
-              >
-                Let’s Talk About Business Solutions With Us
-              </span>
-            </Grid>
-            <Grid item xs={6} sm={6} md={3} align="right">
-              <Button
-                style={{
-                  backgroundColor: "white",
-                  color: "black",
-                  fontWeight: 600,
-                  paddingLeft: "12%",
-                  paddingRight: "12%",
-                  paddingTop: "6%",
-                  paddingBottom: "6%",
-                }}
-                size="large"
-                variant="outlined"
-                endIcon={<ArrowRightAltIcon />}
-              >
-                JOIN WITH US
-              </Button>
-            </Grid>
-            <Grid item xs={6} sm={6} md={3} align="center">
-              <Button
-                style={{
-                  color: "white",
-                  fontWeight: 600,
-                  paddingLeft: "12%",
-                  paddingRight: "12%",
-                  paddingTop: "6%",
-                  paddingBottom: "6%",
-                }}
-                size="large"
-                startIcon={<PhoneEnabledOutlinedIcon />}
-              >
-                +812 (345) 789 88
-              </Button>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* ------case study section ------------------ */}
-
-      <Box
-        sx={{
-          // height: "130vh",
-          // bgcolor: '#f5f5f5',
-          width: "100vw"
-        }}
-        style={{ marginBottom: "5%", paddingTop: "8%", paddingBottom: "8%" }}
-      >
-        <Container maxWidth="lg">
-          <Grid container maxWidth="lg" justifyContent="center">
-            <DividerWithTextInBetween>CASE STUDIES</DividerWithTextInBetween>
-          </Grid>
-          <Grid
-            container
-            maxWidth="lg"
-            justifyContent="center"
-            style={{ marginTop: "3%" }}
-          >
-            <span style={{ fontSize: "300%", fontWeight: 600 }}>
-              Our Latest Case <br /> Studies{" "}
-            </span>
-          </Grid>
-          <Grid
-            container
-            spacing={4}
-            align="left"
-            style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
-          >
-            {caseStudyCards.map((card) => (
-              <Grid item xs={12} sm={6} md={4}>
-                <Card
-                  maxWidth="lg"
-                  style={{ boxShadow: "none", borderRadius: 0 }}
-                >
-                  {/* <CardContent> */}
-                  <Box
-                    component="img"
-                    src={card.src}
-                    sx={{
-                      height: "37vh",
-                      width: "100%",
-                    }}
-                  />
-                  {/* </CardContent> */}
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* ----------------- case study section end ----------------- */}
-
-      {/* -------------- Testimonials section -------------------------- */}
-
+      {/* our vision */}
       <Container maxWidth="lg">
         <Grid
           container
-          spacing={9}
-          style={{ display: "flex", alignItems: "center" }}
+          spacing={8}
+          style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
         >
-          <Grid item xs={12} sm={6} md={6} align="left">
-            {/* <Typography>  */}
-            <DividerWithText>TESTIMONIALS</DividerWithText>
-            <div style={{ margin: "5%" }}></div>
-            <span style={{ fontSize: "300%", fontWeight: "bold" }}>
-              What Our Client’s Say About us{" "}
-            </span>{" "}
-            <br /> <br />
-            <span style={{ lineHeight: "26pt" }}>
-              {reviews !== null && reviews[index].review}
-            </span>
-            <br />
-            <div style={{ marginTop: "5%" }}>
-              <span
-                style={{
-                  lineHeight: "16pt",
-                  fontSize: "180%",
-                  fontWeight: 600,
-                }}
-              >
-                {reviews !== null && reviews[index].name} <br />
-                <span
-                  style={{
-                    fontSize: "60%",
-                    fontWeight: 600,
-                    color: PrimaryColor,
-                  }}
-                >
-                  {reviews !== null && reviews[index].post}
+              <Grid item xs={12} sm={12} md={6} align="left">
+                <DividerWithText>
+                  {/* text here */}
+                  
+                </DividerWithText>
+                <div style={{ margin: "5%" }}></div>
+                {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
+                <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
+                Our
+                  <span style={{ color: PrimaryColor }}> Vision</span>{" "}
+                </span>{" "}
+                <br/><br/>
+                <span style={{ lineHeight: "26pt" }}>
+                We at Relish cherish the vision of delivering high-end, global quality IT solutions that fosters the growth of small and medium businesses. Developed and designed by well qualified and highly matured professionals our solutions are oriented to foster overall organisational development.
+                  <br />
+                 
                 </span>
-              </span>
-              <Pagination
-                classes={{ ul: classes.ul }}
-                variant="outlined"
-                count={reviews === null ? 0 : 2}
-                size="large"
-                shape="circular"
-                style={{ marginTop: "6%" }}
-                onChange={changeIndex}
-              />
-            </div>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} align="center">
+                {/* <Button
+                  style={{
+                    marginTop: "5%",
+                    paddingLeft: "7%",
+                    paddingRight: "7%",
+                    paddingTop: "3%",
+                    paddingBottom: "3%",
+                    backgroundColor: PrimaryColor,
+                    color: "white",
+                  }}
+                  size="large"
+                  variant="outlined"
+                  endIcon={<ArrowRightAltIcon />}
+                >
+                  Learn More
+                </Button> */}
+              </Grid>
+          <Grid item xs={12} sm={12} md={6}>
             <Box
               component="img"
-              sx={
-                {
-                  // height: "50vh",
-                  // width: "100vw",
-                }
-              }
+              sx={{
+                height: "70vh",
+                // width: "100vw",
+              }}
               alt="The house from the offer."
-              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/test.png"
+              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
             />
           </Grid>
         </Grid>
       </Container>
 
+      {/* our mission */}
+      <Container maxWidth="lg">
+        <Grid
+          container
+          spacing={8}
+          style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
+        >
+          <Grid item xs={12} sm={12} md={6}>
+            <Box
+              component="img"
+              sx={{
+                height: "70vh",
+                // width: "100vw",
+              }}
+              alt="The house from the offer."
+              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
+            />
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} align="left">
+            <DividerWithText>
+              {/* text here */}
+            </DividerWithText>
+            <div style={{ margin: "5%" }}></div>
+            {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
+            <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
+            Our 
+              <span style={{ color: PrimaryColor }}> Mission</span>{" "}
+            </span>{" "}
+            <br/><br/>
+            <span style={{ lineHeight: "26pt" }}>
+            We nurture the mission of being India’s top web designing and software development firm with higher ethical standards and delivering world class IT solutions.  <br />
+             
+            </span>
+            {/* <Button
+              style={{
+                marginTop: "5%",
+                paddingLeft: "7%",
+                paddingRight: "7%",
+                paddingTop: "3%",
+                paddingBottom: "3%",
+                backgroundColor: PrimaryColor,
+                color: "white",
+              }}
+              size="large"
+              variant="outlined"
+              endIcon={<ArrowRightAltIcon />}
+            >
+              Learn More
+            </Button> */}
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* Who We Are */}
+      <Container maxWidth="lg">
+        <Grid
+          container
+          spacing={8}
+          style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
+        >
+              <Grid item xs={12} sm={12} md={6} align="left">
+                <DividerWithText>
+                  {/* text here */}
+                  
+                </DividerWithText>
+                <div style={{ margin: "5%" }}></div>
+                {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
+                <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
+                Who
+                  <span style={{ color: PrimaryColor }}> We</span>{" "}Are
+                </span>{" "}
+                <br/><br/>
+                <span style={{ lineHeight: "26pt" }}>
+                We deliver enterprise-grade web solutions that power strategic work processes and workflows. <br />
+                 
+                </span>
+                {/* <Button
+                  style={{
+                    marginTop: "5%",
+                    paddingLeft: "7%",
+                    paddingRight: "7%",
+                    paddingTop: "3%",
+                    paddingBottom: "3%",
+                    backgroundColor: PrimaryColor,
+                    color: "white",
+                  }}
+                  size="large"
+                  variant="outlined"
+                  endIcon={<ArrowRightAltIcon />}
+                >
+                  Learn More
+                </Button> */}
+              </Grid>
+          <Grid item xs={12} sm={12} md={6}>
+            <Box
+              component="img"
+              sx={{
+                height: "70vh",
+                // width: "100vw",
+              }}
+              alt="The house from the offer."
+              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
+            />
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* our dna */}
+      <Container maxWidth="lg">
+        <Grid
+          container
+          spacing={8}
+          style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
+        >
+          <Grid item xs={12} sm={12} md={6}>
+            <Box
+              component="img"
+              sx={{
+                height: "70vh",
+                // width: "100vw",
+              }}
+              alt="The house from the offer."
+              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
+            />
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} align="left">
+            <DividerWithText>
+              {/* text here */}
+            </DividerWithText>
+            <div style={{ margin: "5%" }}></div>
+            {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
+            <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
+            Our 
+              <span style={{ color: PrimaryColor }}> DNA</span>{" "}
+            </span>{" "}
+            <br/><br/>
+            <span style={{ lineHeight: "26pt" }}>
+            As we provide IT Consulting Services, Focused on constant innovation as our key for achieving the ultimate goal of success and emerged as a globally recognized Digitally Transformation Consultancy by providing superior quality services and solutions. 
+            </span>
+            {/* <Button
+              style={{
+                marginTop: "5%",
+                paddingLeft: "7%",
+                paddingRight: "7%",
+                paddingTop: "3%",
+                paddingBottom: "3%",
+                backgroundColor: PrimaryColor,
+                color: "white",
+              }}
+              size="large"
+              variant="outlined"
+              endIcon={<ArrowRightAltIcon />}
+            >
+              Learn More
+            </Button> */}
+          </Grid>
+        </Grid>
+      </Container>
+
+
+      {/* ------services section ------------------ */}
+
+      
+
+      {/* ----------------- services section end ----------------- */}
+
+    
+
+      {/* ------case study section ------------------ */}
+
+      
+      {/* ----------------- case study section end ----------------- */}
+
+      {/* -------------- Testimonials section -------------------------- */}
+
+     
+
       {/* ---------------- testimonials section end --------------------- */}
 
-      <Box
-        sx={{
-          // height: "130vh",
-          bgcolor: PrimaryColor,
-          width: "100vw"
-        }}
-        style={{ marginTop: "8%", paddingTop: "8%", paddingBottom: "8%" }}
-      >
-        <Container maxWidth="lg">
-          {/* main tv */}
-          <TrackVisibility>
-            {({ isVisible }) =>
-              isVisible ? (
-                <Grid
-                  container
-                  style={{ display: "flex", alignItems: "center" }}
-                >
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <PersonIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></PersonIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>
-                          <AnimatedNumber
-                            formatValue={(value) => `${parseInt(value)}`}
-                            value={769}
-                          />
-                          +
-                        </span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <AssignmentTurnedInIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></AssignmentTurnedInIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>
-                          <AnimatedNumber
-                            formatValue={(value) => `${parseInt(value)}`}
-                            value={39}
-                          />
-                          +
-                        </span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <PeopleAltIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></PeopleAltIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>
-                          <AnimatedNumber
-                            formatValue={(value) => `${parseInt(value)}`}
-                            value={59}
-                          />
-                          +
-                        </span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <FavoriteBorderIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></FavoriteBorderIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>
-                          <AnimatedNumber
-                            formatValue={(value) => `${parseInt(value)}`}
-                            value={89}
-                          />
-                          +
-                        </span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                </Grid>
-              ) : (
-                // if not visible
-                <Grid
-                  container
-                  style={{ display: "flex", alignItems: "center" }}
-                >
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <PersonIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></PersonIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>569+</span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <AssignmentTurnedInIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></AssignmentTurnedInIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>569+</span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <PeopleAltIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></PeopleAltIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>569+</span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                  <Grid item xs={6} sm={6} md={3} style={{marginBottom:'45px'}}>
-                    <FavoriteBorderIcon
-                      style={{ fontSize: "400%", color: "white" }}
-                    ></FavoriteBorderIcon>
-                    <div style={{ marginTop: "10%" }}>
-                      <span
-                        style={{
-                          lineHeight: "16pt",
-                          fontSize: "300%",
-                          fontWeight: "bold",
-                          color: "white",
-                        }}
-                      >
-                        {/* {({ isVisible }) => console.log(isVisible)} */}
-                        <span>569+</span>
-
-                        <br />
-                        <span style={{ fontSize: "35%", fontWeight: 400 }}>
-                          Expert Developers
-                        </span>
-                      </span>
-                    </div>
-                  </Grid>
-                </Grid>
-              )
-            }
-          </TrackVisibility>
-        </Container>
-      </Box>
+{/* numbers */}
+          <Numbers/>
 
       {/*  --------------------- blogs start ----------------------------------------*/}
 
-      <Container maxWidth="lg">
-        <Grid
-          container
-          spacing={9}
-          style={{
-            marginTop: "6%",
-            marginBottom: "3%",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <Grid item xs={12} sm={12} md={5} align="left">
-            <DividerWithText>OUR BLOG</DividerWithText>
-            <div style={{ margin: "5%" }}></div>
-            <span style={{ fontSize: "280%", fontWeight: "bold" }}>
-              Read Our Latest News & Blog{" "}
-            </span>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4} align="left">
-            <Button
-              style={{
-                backgroundColor: PrimaryColor,
-                color: "white",
-                fontWeight: 600,
-                paddingLeft: "10%",
-                paddingRight: "10%",
-                paddingTop: "5%",
-                paddingBottom: "5%",
-              }}
-              endIcon={<ArrowRightAltIcon />}
-            >
-              VIEW ALL NEWS
-            </Button>
-          </Grid>
-        </Grid>
-      </Container>
-
-      <Container maxWidth="lg">
-        <Grid
-          container
-          style={{
-            marginBottom: "8%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Grid item align="left">
-            {/* <Box
-        component="img"
-        sx={{
-          
-          width: "200px",
-          
-        }}
-        alt="The house from the offer."
-        
-        src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/06.jpg"
-      /> */}
-          </Grid>
-          {/* <Grid item xs={12} sm={12} md={4}>
-            <Box
-        component="img"
-        sx={{
-          height: "30vh",
-          width: "25vw",
-          
-        }}
-        alt="The house from the offer."
-        
-        src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/05-1.jpg"
-      />
-            </Grid> */}
-          <Grid item xs={12} sm={12} md={8} align="left">
-            {blogs.map((blog) => {
-              return (
-                <Link
-                  to={`/Blog/${blog.title}`}
-                  state={{ blog: blog }}
-                  style={{ textDecoration: "none" }}
-                >
-                  <Card
-                    sx={{ display: "flex", height: "30vh", marginTop: "10px" }}
-                  >
-                    <CardMedia
-                      component="img"
-                      sx={{ height: "30vh", width: "25vw" }}
-                      image={blog.img1}
-                      alt="Live from space album cover"
-                    />
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        marginLeft: "4%",
-                        paddingTop: "3%",
-                        paddingBottom: "2.5%",
-                      }}
-                    >
-                      <Box sx={{ display: "flex", marginLeft: "4%" }}>
-                        <Typography
-                          style={{
-                            color: "grey",
-                            verticalAlign: "middle",
-                            marginRight: "3%",
-                            display: "inline-flex",
-                          }}
-                        >
-                          <span
-                            style={{ color: PrimaryColor, marginRight: "1%" }}
-                          >
-                            <PersonOutlineOutlinedIcon />
-                          </span>
-                          Buythatfits
-                        </Typography>
-                        <Typography
-                          style={{
-                            color: "grey",
-                            verticalAlign: "middle",
-                            whiteSpace: "nowrap",
-                            marginRight: "4%",
-                            display: "inline-flex",
-                          }}
-                        >
-                          <span
-                            style={{ color: PrimaryColor, marginRight: "4%" }}
-                          >
-                            <EventNoteOutlinedIcon />
-                          </span>
-                          {blog.pub_date}
-                        </Typography>
-                        <Typography
-                          style={{
-                            color: "grey",
-                            verticalAlign: "middle",
-                            display: "inline-flex",
-                          }}
-                        >
-                          <span
-                            style={{ color: PrimaryColor, marginRight: "4%" }}
-                          >
-                            <QuestionAnswerOutlinedIcon />{" "}
-                          </span>
-                          ({blog.noOfComments})
-                        </Typography>
-                      </Box>
-                      <CardContent sx={{ flex: "1 0 auto" }}>
-                        <Typography
-                          style={{ fontWeight: "bold", fontSize: "150%" }}
-                        >
-                          {blog.title}
-                        </Typography>
-                        <Typography style={{ marginTop: "8%", color: "grey" }}>
-                          {blog.content}
-                        </Typography>
-                      </CardContent>
-                    </Box>
-                  </Card>
-                </Link>
-              );
-            })}
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/*  --------------------- blogs end ----------------------------------------*/}
+     
+       {/* --------------------- blogs end ---------------------------------------- */}
 
       <Footer />
     </div>

@@ -98,11 +98,11 @@ const Blogs = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const servicesCards = [
     {
-      title: "Server Security",
+      title: "Python Scripting",
       src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",
     },
     {
-      title: "Database Analysis",
+      title: "Testing Services",
       src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",
     },
     {
@@ -320,7 +320,7 @@ const Blogs = () => {
       {blog.title}
       </Typography>
       <Typography style={{marginTop:"20px",color:"grey"}}>
-      {blog.content}
+      {/* {blog.content} */}
       </Typography>
       </CardContent>
 

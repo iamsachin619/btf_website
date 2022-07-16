@@ -40,6 +40,7 @@ import ServicePage from "./Pages/ServicePage";
 
 
 import PrimaryColor from "../env";
+import BlogAdd from "./Pages/BlogAdd";
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,6 +80,9 @@ const NavBar = (props) => {
   const open = Boolean(anchor);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+
+  
   const handleMenu = (event) => {
     setAnchor(event.currentTarget);
   };
@@ -86,7 +90,8 @@ const NavBar = (props) => {
     <div className={classes.root}>
       {/* <HideOnScroll {...props}> */}
       <>
-          <AppBar elevation={8} style={{justify :"center",backgroundColor:"white"}}>
+
+          <AppBar style={{justify :"center",backgroundColor:"white"}}>
           <Stack direction="column">
           {/* <Box sx={{ bgcolor: '#f5f5f5',height:"8vh" }}>
           <Container maxWidth="lg" style={{marginTop:"1.5vh"}}>
@@ -125,7 +130,7 @@ const NavBar = (props) => {
           </Grid>
           </Container>
               </Box> */}
-            <Toolbar disableGutters style={{marginBottom:"1.8%",marginTop:"1.8%"}}>
+            <Toolbar disableGutters style={{marginBottom:"0.8%",marginTop:"0.8%"}}>
 
               
               <Typography
@@ -136,7 +141,7 @@ const NavBar = (props) => {
                 className={classes.title}
                 style={{color:"black",fontWeight:"bold",textDecoration:'none',marginLeft:'5%'}}
               >
-                Buythatfits
+                Relish
               </Typography>
                  
               
@@ -168,7 +173,7 @@ const NavBar = (props) => {
                     <MenuItem
                       onClick={() => setAnchor(null)}
                       component={Link}
-                      style={{color: PrimaryColor}}
+                      style={{color:`${path=='/'?PrimaryColor:'black'}`}}
                       to="/"
                     >
                       {/* <ListItemIcon>
@@ -180,6 +185,7 @@ const NavBar = (props) => {
                       onClick={() => setAnchor(null)}
                       component={Link}
                       to="/About"
+                      style={{color:`${path=='/About'?PrimaryColor:'black'}`}}
                     >
                       {/* <ListItemIcon>
                         <PersonIcon />
@@ -190,6 +196,7 @@ const NavBar = (props) => {
                       onClick={() => setAnchor(null)}
                       component={Link}
                       to="/College"
+                      style={{color:`${path=='/College'?PrimaryColor:'black'}`}}
                     >
                       {/* <ListItemIcon>
                         <SchoolIcon />
@@ -200,6 +207,7 @@ const NavBar = (props) => {
                       onClick={() => setAnchor(null)}
                       component={Link}
                       to="/Blogs"
+                      style={{color:`${path=='/Blogs'?PrimaryColor:'black'}`}}
                     >
                       {/* <ListItemIcon>
                         <BookmarksIcon />
@@ -210,6 +218,7 @@ const NavBar = (props) => {
                       onClick={() => setAnchor(null)}
                       component={Link}
                       to="/contact-us"
+                      style={{color:`${path=='/contact-us'?PrimaryColor:'black'}`}}
                     >
                       {/* <ListItemIcon>
                         <BookmarksIcon />
@@ -294,6 +303,7 @@ const NavBar = (props) => {
             <Route exact path="/Blogs" element={<Blogs/>} />
             <Route exact path="/contact-us" element={<ContactUs/>} />
             <Route exact path='/service/:slug' element={<ServicePage/>} />
+            <Route exact path='/blogAdd' element={<BlogAdd/>} />
           </Routes>
         </ScrollToTop>
           
