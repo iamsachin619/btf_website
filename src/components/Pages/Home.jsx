@@ -127,11 +127,11 @@ const Home = () => {
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const servicesCards = [
-    {title:"Technical Consultation",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-6.png",slug:'TC'},
-    {title:"Web Solution",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-5.png",slug:'WebSolution'},
-    {title:"UI/UX services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-4.png",slug:'UI'},
-    {title:"Python Scripting",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",slug:'Python'},
-    {title:"Testing Services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",slug:'Testing'},
+    {title:"Technical Consultation",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-6.png",slug:'TC',description:'Our Technical consultation services provide opportunities to improve performance, manage risk and drive the latest innovation.'},
+    {title:"Web Solution",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-5.png",slug:'WebSolution',description:'Relish Web Solutions is an Award-Winning IT Company Offering Various Services, Including Web Design and Website Development. '},
+    {title:"UI/UX services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-4.png",slug:'UI',description:'Innovative UI/UX design services from Relish to help businesses design intuitive solutions to enhance their digital experience.'},
+    {title:"Python Scripting",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-3.png",slug:'Python',description:'Relish supports writing custom scripting services in Python to automate your day-to-day tasks.'},
+    {title:"Testing Services",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-2.png",slug:'Testing',description:'Relish takes an innovative approach to application & software testing services to reduce risks, drive quality assurance & improve IT performance.'},
     // {title:"Web Development",src:"https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/icon-01.jpg",slug:'Web'},
    ];
   const caseStudyCards = [
@@ -236,7 +236,7 @@ const Home = () => {
                 }}
                 className="displayAnimated"
               >
-                Moving Human<br /> Experience Forward!
+                Trusted by Enterprises around the world
                 {/* <br/> */}
                 <TrackVisibility>
               {({ isVisible }) =>
@@ -254,7 +254,7 @@ const Home = () => {
                 }}
                 className="displayAnimated"
               >
-                We help you deliver growth-driven experiences to your users.
+                We specialise in UI/UX, web development, web solution & testing services.
  <br />{" "}
              
               </span>
@@ -277,7 +277,7 @@ const Home = () => {
                 }}
                 endIcon={<ArrowRightAltIcon />}
                 component={Link}
-                to="/About"
+                to="/contact-us"
               >
                 Book a 30 Minute Consultation. 
               </Button>
@@ -318,7 +318,7 @@ const Home = () => {
         <Grid
           container
           //spacing={8}
-          style={{ marginTop: "8%", display: "flex", alignItems: "center" }}
+          style={{ marginTop: "8%", display: "flex", alignItems: "" }}
         >
           <Grid item xs={12} sm={12} md={7} align="left">
             {/* <Typography>  */}
@@ -326,12 +326,12 @@ const Home = () => {
             <div style={{ margin: "5%" }}></div>
             {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
             <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
-              More than 23+ years we provide 
-              <span style={{ color: PrimaryColor}}> IT solutions </span>{" "}
+            Why Choose Us For <br/>
+              <span style={{ color: PrimaryColor}}>  Web Solution </span>{" "}Services?
             </span>{" "}
             <br /> <br />
             <span style={{ lineHeight: "26pt" }}>
-            We are a Web Development and UI/UX design company that innovates user experience by incorporating research and user-centric innovations.
+            Relish is a trusted solution company in India. We have lots of experience in custom web development services, serving clients across the globe. We have a proven record as a web development service provider in delivering complex web app solutions, from planning to delivery.
             </span>
             {/* </Typography> */}
           </Grid>
@@ -357,49 +357,7 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Container maxWidth="lg">
-        <Grid
-          container
-          //spacing={8}
-          style={{ marginTop: "8%", display: "flex", alignItems: "center" }}
-        >
-          <Grid item xs={12} sm={12} md={5}>
-            <Box
-              component="img"
-              sx={{
-                height: "50vh",
-                // width: "100vw",
-                margin:"20px"
-             
-              }}
-              alt="The house from the offer."
-              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/about.jpg"
-
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={7} align="left">
-            {/* <Typography>  */}
-            {/* <DividerWithText >WHO WE ARE</DividerWithText> */}
-            <div style={{ margin: "5%" }}></div>
-            {/* <Typography style={{color:'black',fontSize:'16px',paddingBottom:15,fontWeight:'800'}}> */}
-            <span style={{ fontSize: "280%", fontWeight: "bolder" }}>
-            Why choose  <span style={{ color: PrimaryColor}}>Relish</span> as your Website Development and UI/UX Company?
-              {/* <span style={{ color: PrimaryColor}}> IT solutions </span>{" "} */}
-            </span>{" "}
-            <br /> <br />
-            <span style={{ lineHeight: "26pt" }}>
-            Take advantage of our expertise. Build your Brand Equity and Business online. Take your Marketing & Business ideas to life & turn them into a profitable and growing business with the best Website Development and UI/UX company!
-            </span>
-            {/* </Typography> */}
-          </Grid>
-          
-          {/* <Grid item xs={12} sm={12} md={4} align="left">
-            <span style={{ lineHeight: "26pt" }}>
-              
-            </span>
-          </Grid> */}
-        </Grid>
-      </Container>
+      
 
       
       {/* ------services section ------------------ */}
@@ -413,7 +371,7 @@ const Home = () => {
         }}
         style={{
           marginTop: "8%",
-          marginBottom: "8%",
+         
           paddingTop: "8%",
           paddingBottom: "8%",
         }}
@@ -429,19 +387,19 @@ const Home = () => {
             style={{ marginTop: "3%" }}
           >
             <span style={{ fontSize: "300%", fontWeight: 600 }}>
-              We provide exclusive services <br /> for your bussiness{" "}
+            We offer top-notch services <br/> for your business
             </span>
           </Grid>
-          <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "center" , justifyContent:'center'}}>
+          <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "stretch" , justifyContent:'center'}}>
       {servicesCards.map( card => (
             <Grid item xs={12} sm={6} md={4} align="center">
             
-              <Card maxWidth="lg" style={{padding:"5%",boxShadow: "none",borderRadius:10}}>
+              <Card maxWidth="lg" style={{padding:"5%",boxShadow: "none",borderRadius:10,height: '93%' }}>
               <CardContent>
               <Box
                 component="img"
                 src={card.src}
-                style={{marginTop:"8%",marginBottom:"8%"}}
+                style={{marginTop:"8%",marginBottom:"8%",height:'100%'}}
               />
                 <Box style={{marginBottom:"8%"}}>
                   <Typography variant="h5" style={{fontWeight:"bolder"}}>
@@ -450,7 +408,7 @@ const Home = () => {
                 </Box>
                 {/* <ul> */}
                 <span style={{lineHeight:"26pt"}}>
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking.
+                {card.description}
                 </span>
                   {/* {card.description.map((line) => (
                     <Typography

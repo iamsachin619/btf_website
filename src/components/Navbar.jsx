@@ -235,7 +235,7 @@ const NavBar = (props) => {
                     component={Link}
                     to="/"
                     disableRipple
-                    style={{ backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/'?`2px solid ${PrimaryColor}`:'none'}`}}
+                    style={{ backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/'?`2px solid ${PrimaryColor}`:'none'}`, borderRadius:'0px'}}
                   >
                     <span style={{}}>Home</span>
                   </Button>
@@ -244,7 +244,7 @@ const NavBar = (props) => {
                     component={Link}
                     to="/About"
                     disableRipple
-                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/About'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/About'?`2px solid ${PrimaryColor}`:'none'}`}}
+                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/About'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/About'?`2px solid ${PrimaryColor}`:'none'}`, borderRadius:'0px'}}
                   >
                     {/* <PersonIcon /> */}
                     About
@@ -254,7 +254,7 @@ const NavBar = (props) => {
                     component={Link}
                     to="/College"
                     disableRipple
-                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/College'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/College'?`2px solid ${PrimaryColor}`:'none'}`}}
+                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/College'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/College'?`2px solid ${PrimaryColor}`:'none'}`, borderRadius:'0px'}}
                   >
                     Services
                   </Button>
@@ -263,7 +263,7 @@ const NavBar = (props) => {
                     component={Link}
                     to="/Blogs"
                     disableRipple
-                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/Blogs'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/Blogs'?`2px solid ${PrimaryColor}`:'none'}`, marginRight:"1%"}}
+                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/Blogs'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/Blogs'?`2px solid ${PrimaryColor}`:'none'}`, marginRight:"1%", borderRadius:'0px'}}
                   >
                     Blogs
                   </Button>
