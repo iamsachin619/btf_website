@@ -12,15 +12,23 @@ import {
   MenuItem,
   Container,
   Grid,
-  Collapse
+  Collapse,
 } from "@material-ui/core";
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Button, Stack, Box} from "@mui/material";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import {
+  List,
+  ListItemButton,
+  ListItemText,
+  Button,
+  Stack,
+  Box,
+  SwipeableDrawer,
+} from "@mui/material";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Route, Routes, Link, useLocation } from "react-router-dom";
-import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
-import PhoneEnabledOutlinedIcon from '@material-ui/icons/PhoneEnabledOutlined';
-import DraftsOutlinedIcon from '@material-ui/icons/DraftsOutlined';
+import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
+import PhoneEnabledOutlinedIcon from "@material-ui/icons/PhoneEnabledOutlined";
+import DraftsOutlinedIcon from "@material-ui/icons/DraftsOutlined";
 // IMPORTING ICONS
 import MenuIcon from "@material-ui/icons/Menu";
 // import HomeIcon from "@material-ui/icons/Home";
@@ -28,32 +36,32 @@ import MenuIcon from "@material-ui/icons/Menu";
 // import PersonIcon from "@material-ui/icons/Person";
 // import BookmarksIcon from "@material-ui/icons/Bookmarks";
 
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollToTop from "../components/ScrollToTop";
 // REACT APP IMPORTS
 import Home from "./Pages/Home";
 import College from "./Pages/College";
 import About from "./Pages/About";
 import Blogs from "./Pages/Blogs";
-import ContactUs from './Pages/ContactUs';
-import Blog from './Pages/Blog';
+import ContactUs from "./Pages/ContactUs";
+import Blog from "./Pages/Blog";
 import ServicePage from "./Pages/ServicePage";
-
 
 import PrimaryColor from "../env";
 import BlogAdd from "./Pages/BlogAdd";
+import { navItems, title } from "../constant";
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
     // alignSelf: 'flex-end'
-    display: 'flex'
-  }
+    display: "flex",
+  },
 }));
 
 function HideOnScroll(props) {
@@ -61,7 +69,7 @@ function HideOnScroll(props) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: props.threshold,
-    target: props.window ? window() : undefined
+    target: props.window ? window() : undefined,
   });
 
   return (
@@ -72,28 +80,64 @@ function HideOnScroll(props) {
 }
 
 const NavBar = (props) => {
-
   const location = useLocation();
-  const path = location.pathname
+  const path = location.pathname;
   const classes = useStyles();
-  const [anchor, setAnchor] = React.useState(null);
-  const open = Boolean(anchor);
+  const [anchor, setAnchor] = React.useState("right");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const [state, setState] = React.useState({
+    anchor: false,
+  });
 
-  
-  const handleMenu = (event) => {
-    setAnchor(event.currentTarget);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
   };
+
+  const handleListItemClick = (_event, index) => {
+    setSelectedIndex(index);
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {navItems.map((item, index) => (
+          <ListItemButton
+            key={index}
+            component={Link}
+            to={item.link}
+            onClick={(event) => handleListItemClick(event, index)}
+            selected={selectedIndex === index}
+          >
+            <ListItemText primary={item.name} />
+          </ListItemButton>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <div className={classes.root}>
       {/* <HideOnScroll {...props}> */}
       <>
-
-          <AppBar style={{justify :"center",backgroundColor:"white"}}>
+        <AppBar style={{ justify: "center", backgroundColor: "white" }}>
           <Stack direction="column">
-          {/* <Box sx={{ bgcolor: '#f5f5f5',height:"8vh" }}>
+            {/* <Box sx={{ bgcolor: '#f5f5f5',height:"8vh" }}>
           <Container maxWidth="lg" style={{marginTop:"1.5vh"}}>
           <Grid container>
             <Grid item xs={12} sm={12} md={12} align="left">
@@ -130,21 +174,26 @@ const NavBar = (props) => {
           </Grid>
           </Container>
               </Box> */}
-            <Toolbar disableGutters style={{marginBottom:"0.8%",marginTop:"0.8%"}}>
-
-              
+            <Toolbar
+              disableGutters
+              style={{ marginBottom: "0.8%", marginTop: "0.8%" }}
+            >
               <Typography
                 variant="h4"
-                to='/'
+                to="/"
                 component={Link}
                 // color="textSeconadary"
                 className={classes.title}
-                style={{color:"black",fontWeight:"bold",textDecoration:'none',marginLeft:'5%'}}
+                style={{
+                  color: "black",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  marginLeft: "5%",
+                }}
               >
-                Relish
+                {title}
               </Typography>
-                 
-              
+
               {isMobile ? (
                 <>
                   <IconButton
@@ -152,122 +201,60 @@ const NavBar = (props) => {
                     className={classes.menuButton}
                     edge="start"
                     aria-label="menu"
-                    onClick={handleMenu}
+                    onClick={toggleDrawer(anchor, true)}
                   >
-                    <MenuIcon fontSize="large" style={{color:"black"}}/>
+                    <MenuIcon fontSize="large" style={{ color: "black" }} />
                   </IconButton>
-                  <Menu
-                    id="menu-appbar"
-                    anchorEl={anchor}
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "right"
-                    }}
-                    KeepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "right"
-                    }}
-                    open={open}
+                  <SwipeableDrawer
+                    anchor={anchor}
+                    open={state[anchor]}
+                    onClose={toggleDrawer(anchor, false)}
+                    onOpen={toggleDrawer(anchor, true)}
                   >
-                    <MenuItem
-                      onClick={() => setAnchor(null)}
-                      component={Link}
-                      style={{color:`${path=='/'?PrimaryColor:'black'}`}}
-                      to="/"
-                    >
-                      {/* <ListItemIcon>
-                        <HomeIcon />
-                      </ListItemIcon> */}
-                      <Typography variant="h6" > Home</Typography>
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => setAnchor(null)}
-                      component={Link}
-                      to="/About"
-                      style={{color:`${path=='/About'?PrimaryColor:'black'}`}}
-                    >
-                      {/* <ListItemIcon>
-                        <PersonIcon />
-                      </ListItemIcon> */}
-                      <Typography variant="h6"> About</Typography>
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => setAnchor(null)}
-                      component={Link}
-                      to="/College"
-                      style={{color:`${path=='/College'?PrimaryColor:'black'}`}}
-                    >
-                      {/* <ListItemIcon>
-                        <SchoolIcon />
-                      </ListItemIcon> */}
-                      <Typography variant="h6"> Services </Typography>
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => setAnchor(null)}
-                      component={Link}
-                      to="/Blogs"
-                      style={{color:`${path=='/Blogs'?PrimaryColor:'black'}`}}
-                    >
-                      {/* <ListItemIcon>
-                        <BookmarksIcon />
-                      </ListItemIcon> */}
-                      <Typography variant="h6"> Blog </Typography>
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => setAnchor(null)}
-                      component={Link}
-                      to="/contact-us"
-                      style={{color:`${path=='/contact-us'?PrimaryColor:'black'}`}}
-                    >
-                      {/* <ListItemIcon>
-                        <BookmarksIcon />
-                      </ListItemIcon> */}
-                      <Typography variant="h6"> Contact Us </Typography>
-                    </MenuItem>
-                  </Menu>
+                    {list(anchor)}
+                  </SwipeableDrawer>
                 </>
               ) : (
-                <div style={{flexGrow:1,alignSelf:"flex-center",marginRight:"5%"}}>
-                <Stack spacing={2} direction="row" style={{justifyContent:'end'}}>
-                  <Button
-                    variant="text"
-                    component={Link}
-                    to="/"
-                    disableRipple
-                    style={{ backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/'?`2px solid ${PrimaryColor}`:'none'}`, borderRadius:'0px'}}
+                <div
+                  style={{
+                    flexGrow: 1,
+                    alignSelf: "flex-center",
+                    marginRight: "5%",
+                  }}
+                >
+                  <Stack
+                    spacing={2}
+                    direction="row"
+                    style={{ justifyContent: "end" }}
                   >
-                    <span style={{}}>Home</span>
-                  </Button>
-                  <Button
-                    variant="text"
-                    component={Link}
-                    to="/About"
-                    disableRipple
-                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/About'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/About'?`2px solid ${PrimaryColor}`:'none'}`, borderRadius:'0px'}}
-                  >
-                    {/* <PersonIcon /> */}
-                    About
-                  </Button>
-                  <Button
-                    variant="text"
-                    component={Link}
-                    to="/College"
-                    disableRipple
-                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/College'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/College'?`2px solid ${PrimaryColor}`:'none'}`, borderRadius:'0px'}}
-                  >
-                    Services
-                  </Button>
-                  <Button
-                    variant="text"
-                    component={Link}
-                    to="/Blogs"
-                    disableRipple
-                    style={{backgroundColor:"transparent" ,textTransform: "none",color:`${path=='/Blogs'?PrimaryColor:'black'}`,fontWeight:"bold",fontSize:20, borderBottom:`${path=='/Blogs'?`2px solid ${PrimaryColor}`:'none'}`, marginRight:"1%", borderRadius:'0px'}}
-                  >
-                    Blogs
-                  </Button>
-                  {/* <Button
+                    {navItems.map((item, index) => (
+                      <Button
+                        key={index}
+                        variant="text"
+                        component={Link}
+                        to={item.link}
+                        disableRipple
+                        style={{
+                          backgroundColor: "transparent",
+                          textTransform: "none",
+                          color: `${
+                            path == item.link ? PrimaryColor : "black"
+                          }`,
+                          fontWeight: "bold",
+                          fontSize: 20,
+                          borderBottom: `${
+                            path == item.link
+                              ? `2px solid ${PrimaryColor}`
+                              : "none"
+                          }`,
+                          borderRadius: "0px",
+                        }}
+                      >
+                        {item.name}
+                      </Button>
+                    ))}
+
+                    {/* <Button
                     variant="text"
                     component={Link}
                     to="/contact-us"
@@ -276,37 +263,43 @@ const NavBar = (props) => {
                   >
                     Contact Us
                   </Button> */}
-                  <Button 
-                    to="/contact-us"
-                    variant="contained"
-                    component={Link}
-                    endIcon={<ArrowRightAltIcon />}
-                   
-                    style={{marginLeft:"20px",fontWeight:"bold",paddingLeft:30,paddingTop:15,paddingRight:30,paddingBottom:15, backgroundColor:PrimaryColor}}
-                  >
-                    Contact Us
-                  </Button>
-                </Stack>
+                    <Button
+                      to="/contact-us"
+                      variant="contained"
+                      component={Link}
+                      endIcon={<ArrowRightAltIcon />}
+                      style={{
+                        marginLeft: "20px",
+                        fontWeight: "bold",
+                        paddingLeft: 30,
+                        paddingTop: 15,
+                        paddingRight: 30,
+                        paddingBottom: 15,
+                        backgroundColor: PrimaryColor,
+                      }}
+                    >
+                      Contact Us
+                    </Button>
+                  </Stack>
                 </div>
               )}
             </Toolbar>
-            </Stack>
-            
-          </AppBar>
-          </>
-        <ScrollToTop>
+          </Stack>
+        </AppBar>
+      </>
+      <ScrollToTop>
         <Routes>
-            <Route exact path="/" element={<Home/>} />
-            <Route exact path="/College" element={<College/>} />
-            <Route exact path="/About" element={<About/>} />
-            <Route exact path="/Blog/:title" element={<Blog/>} />
-            <Route exact path="/Blogs" element={<Blogs/>} />
-            <Route exact path="/contact-us" element={<ContactUs/>} />
-            <Route exact path='/service/:slug' element={<ServicePage/>} />
-            <Route exact path='/blogAdd' element={<BlogAdd/>} />
-          </Routes>
-        </ScrollToTop>
-          
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/College" element={<College />} />
+          <Route exact path="/About" element={<About />} />
+          <Route exact path="/Blog/:title" element={<Blog />} />
+          <Route exact path="/Blogs" element={<Blogs />} />
+          <Route exact path="/contact-us" element={<ContactUs />} />
+          <Route exact path="/service/:slug" element={<ServicePage />} />
+          <Route exact path="/blogAdd" element={<BlogAdd />} />
+        </Routes>
+      </ScrollToTop>
+
       {/* </HideOnScroll> */}
     </div>
   );
