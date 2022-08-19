@@ -132,7 +132,7 @@ export default function Footer() {
                   //marginLeft: "7%",
                 }}
               >
-                Buythatfits
+                <img src="./assets/Option_5.png" width={'150px'}/>
               </Typography>
               <div className="" style={{ marginTop: "20px" }}>
                 <Button style={{minWidth: '40px'}}>
@@ -169,7 +169,7 @@ export default function Footer() {
                 startIcon={<LinkedInIcon style={{ color: PrimaryColor }} />}
               >
                 <span style={{ fontSize: "120%" }}>
-                  /Buythatfits <br />{" "}
+                  Relish <br />{" "}
                 </span>
               </Button>
               <div style={{ margin: "3%" }}></div>
@@ -337,7 +337,7 @@ export default function Footer() {
                   display: "inline-flex",
                 }}
               >
-                <CopyrightOutlinedIcon /> Copyright ©2022 Buythatfits. All
+                <CopyrightOutlinedIcon /> Copyright ©2022 Relish Developers. All
                 Rights Reserved Copyright
               </Typography>
             </Grid>

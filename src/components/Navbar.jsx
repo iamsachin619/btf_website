@@ -49,6 +49,7 @@ import ServicePage from "./Pages/ServicePage";
 import PrimaryColor from "../env";
 import BlogAdd from "./Pages/BlogAdd";
 import { navItems, title } from "../constant";
+import Booking from "./Pages/Booking";
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -191,7 +192,8 @@ const NavBar = (props) => {
                   marginLeft: "5%",
                 }}
               >
-                {title}
+                {/* {title} */}
+                <img src="./assets/Option_5.png" width='170px'/>
               </Typography>
 
               {isMobile ? (
@@ -296,6 +298,8 @@ const NavBar = (props) => {
           <Route exact path="/Blogs" element={<Blogs />} />
           <Route exact path="/contact-us" element={<ContactUs />} />
           <Route exact path="/service/:slug" element={<ServicePage />} />
+          <Route exact path='/book' element={<Booking/>}/>
+
           <Route exact path="/blogAdd" element={<BlogAdd />} />
         </Routes>
       </ScrollToTop>
