@@ -155,7 +155,7 @@ export default function CommentForm({ uuid, GetComments, setComments }) {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <EditIcon style={{color:PrimaryColor,marginBottom:"300%"}}/>
+                        <EditIcon style={{color:PrimaryColor,marginBottom:"200%"}}/>
                       </InputAdornment>
                     ),
                   }}

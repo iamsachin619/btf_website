@@ -74,7 +74,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}
@@ -103,7 +103,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}
@@ -132,7 +132,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}
@@ -161,7 +161,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}
@@ -197,7 +197,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}
@@ -220,7 +220,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}
@@ -243,7 +243,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}
@@ -266,7 +266,7 @@ export default function Numbers() {
                       <span
                         style={{
                           lineHeight: "16pt",
-                          fontSize: "300%",
+                          fontSize: "250%",
                           fontWeight: "bold",
                           color: "white",
                         }}

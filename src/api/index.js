@@ -12,4 +12,4 @@ export const Api = axios.create({
     },
 })
 
-export {ContactUS, PostComment, Subscribe, GetClientsReview, GetBlogs, GetComments} from './Components.api'
+export {ContactUS,BookAppointment, PostComment, Subscribe, GetClientsReview, GetBlogs, GetComments, GetTags,GetPortfolio, GetTagsData } from './Components.api'

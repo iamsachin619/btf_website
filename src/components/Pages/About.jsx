@@ -185,7 +185,8 @@ const About = () => {
           backgroundSize: "cover",
           display: "grid",
           placeItems: "center",
-          backgroundImage: `url("https://blog.wiser.com/wp-content/uploads/2015/08/how-buy-one-get-one-can-improve-sales-1074x302@2xC-1296x364.png")`,
+          backgroundImage:'url(./assets/BannerImages/AboutUs.jpeg)',
+          boxShadow:'inset 0 0 0 2000px rgba(0, 0, 0, 0.6)'
         }}
       >
         <Container maxWidth="lg">
@@ -200,11 +201,11 @@ const About = () => {
                 About Us
               </span>
               <div style={{ margin: "1%" }}></div>
-              <span
+              {/* <span
                 style={{ color: "white", fontSize: "120%", fontWeight: "bold" }}
               >
                 Home
-              </span>
+              </span> */}
             </Grid>
           </Grid>
         </Container>
@@ -217,15 +218,18 @@ const About = () => {
           style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
         >
           <Grid item xs={12} sm={12} md={6}>
-            <Box
+            {/* <Box
               component="img"
               sx={{
                 height: "70vh",
-                // width: "100vw",
+                width: "100%",
+                maxWidth:'100%'
+
               }}
-              alt="The house from the offer."
-              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
-            />
+              alt="What is Relish"
+              src="./assets/imgs/What is Relish.jpg"
+            /> */}
+            <img src="./assets/imgs/What is Relish.jpg"/>
           </Grid>
           <Grid item xs={12} sm={12} md={6} align="left">
             <DividerWithText>
@@ -305,7 +309,7 @@ const About = () => {
                 </Button> */}
               </Grid>
           <Grid item xs={12} sm={12} md={6}>
-            <Box
+            {/* <Box
               component="img"
               sx={{
                 height: "70vh",
@@ -313,7 +317,8 @@ const About = () => {
               }}
               alt="The house from the offer."
               src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
-            />
+            /> */}
+            <img src="./assets/imgs/Vision.jpg"/>
           </Grid>
         </Grid>
       </Container>
@@ -326,7 +331,7 @@ const About = () => {
           style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
         >
           <Grid item xs={12} sm={12} md={6}>
-            <Box
+            {/* <Box
               component="img"
               sx={{
                 height: "70vh",
@@ -334,7 +339,8 @@ const About = () => {
               }}
               alt="The house from the offer."
               src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
-            />
+            /> */}
+            <img src="./assets/imgs/mission.jpg"/>
           </Grid>
           <Grid item xs={12} sm={12} md={6} align="left">
             <DividerWithText>
@@ -412,7 +418,7 @@ const About = () => {
                 </Button> */}
               </Grid>
           <Grid item xs={12} sm={12} md={6}>
-            <Box
+            {/* <Box
               component="img"
               sx={{
                 height: "70vh",
@@ -420,7 +426,8 @@ const About = () => {
               }}
               alt="The house from the offer."
               src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
-            />
+            /> */}
+            <img src="./assets/imgs/WhoWeAre.jpg"/>
           </Grid>
         </Grid>
       </Container>
@@ -433,7 +440,7 @@ const About = () => {
           style={{ marginTop: "5%", display: "flex", alignItems: "center" }}
         >
           <Grid item xs={12} sm={12} md={6}>
-            <Box
+            {/* <Box
               component="img"
               sx={{
                 height: "70vh",
@@ -441,7 +448,8 @@ const About = () => {
               }}
               alt="The house from the offer."
               src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/02-3.png"
-            />
+            /> */}
+            <img src="./assets/imgs/our DNA.png"/>
           </Grid>
           <Grid item xs={12} sm={12} md={6} align="left">
             <DividerWithText>

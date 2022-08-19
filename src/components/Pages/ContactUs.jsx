@@ -98,7 +98,7 @@ const Home = () => {
           </DividerWithTextInBetween>         
         </Grid>
         <Grid container maxWidth="lg" justifyContent="center" style={{marginTop:"3%"}}>
-          <span style={{fontSize:"300%",fontWeight:600}}>We provide exclusive services <br/> for your bussiness  </span>     
+          <span style={{fontSize:"200%",fontWeight:600}}>We provide exclusive services <br/> for your bussiness  </span>     
         </Grid>
       <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "center" }}>
       

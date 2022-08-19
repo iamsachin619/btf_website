@@ -41,7 +41,7 @@ import {
   Instagram,
   Twitter,
 } from "@trejgun/material-ui-icons-social-networks";
-import { Subscribe, GetClientsReview, GetBlogs, GetComments } from "../../api";
+import { Subscribe, GetClientsReview, GetBlogs, GetComments, GetPortfolio } from "../../api";
 import Footer from "../Footer";
 import { isVisible } from "@testing-library/user-event/dist/utils";
 import PrimaryColor from "../../env";
@@ -55,6 +55,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination as Pagination2,Navigation } from "swiper";
 import ProjectCard from "../ProjectCard";
+import ServiceCards from "../ServiceCards";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -108,6 +109,9 @@ const useStyles = makeStyles((theme) => ({
   // }
 }));
 
+
+
+const baseURL = process.env.REACT_APP_API_URL
 const Home = () => {
   const classes = useStyles();
   const [index, setIndex] = useState(0);
@@ -124,6 +128,7 @@ const Home = () => {
   //     setDisplay(true)
   //   }, 300)
   // })
+
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const servicesCards = [
@@ -151,6 +156,8 @@ const Home = () => {
       src: "https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/06.jpg",
     },
   ];
+
+
 
   const reviewTestImg = [
     'https://source.unsplash.com/600x400/?computer',
@@ -203,6 +210,15 @@ const Home = () => {
     setIndex(value - 1);
   };
 
+  console.log('erare', baseURL)
+
+  const [caseStudies,setCaseStudies] = useState([])
+  useEffect(async ()=>{
+    const res = await GetPortfolio()
+    setCaseStudies(res.data)
+    console.log(res)
+  },[])
+
   return (
     <div>
       <article
@@ -214,23 +230,24 @@ const Home = () => {
           backgroundSize: "cover",
           display: "grid",
           // placeItems: "center",
-          backgroundImage: `url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Office-Meeting-Simple-Background-Image.jpeg")`,
+          backgroundImage: `url(./assets/imgs/Homepage.jpg)`,
+          boxShadow:'inset 0 0 0 2000px rgba(0, 0, 0, 0.6)'
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" style={{display:'flex'}}>
           <Grid
             container
             //spacing={8}
-            style={{ marginTop: "12%", display: "flex", alignItems: "center" }}
+            style={{ marginTop: "1%", display: "flex", alignItems: "center" }}
           >
             
             <Grid item xs={12} sm={12} md={8} align="left">
-              <div style={{ margin: "5%" }}></div>
+              {/* <div style={{ margin: "5%" }}></div> */}
               <span
                 style={{
                  
                   color: "white",
-                  fontSize: "400%",
+                  fontSize: "375%",
                   fontWeight: "bold",
                   opacity: display ? "1" : "0",
                 }}
@@ -259,9 +276,9 @@ const Home = () => {
              
               </span>
               <div style={{ margin: "5%" }}></div>
-
-              <Button
-                className="displayAnimated"
+                <div className="" style={{display:'flex', flexWrap:'wrap', alignItems:'center', gap:'25px'}}>
+                   <Button
+                className="displayAnimated "
                 style={{
                   backgroundColor: PrimaryColor,
                   color: "white",
@@ -274,29 +291,36 @@ const Home = () => {
                   transition: 'opacity ease-in',
                   transitionDuration: '1s',
                   transitionDelay: '0.25s',
+                  marginTop:'20px'
                 }}
                 endIcon={<ArrowRightAltIcon />}
                 component={Link}
-                to="/contact-us"
+                to="/book"
               >
                 Book a 30 Minute Consultation. 
               </Button>
               {/* <div style={{marginLeft:"5%"}}> */}
               <Link
                 to="/College"
-                className="displayAnimated"
+                className="displayAnimated howItWorks"
                 style={{
                   cursor: "pointer",
-                  textDecorationLine: "underline",
+                  textDecorationLine: "none",
                   fontSize: "120%",
-                  marginLeft: "8%",
+                  // marginLeft: "8%",
                   color: "white",
                   fontWeight: "bold",
                   opacity: display ? "1" : "0",
+                  whiteSpace:'nowrap',
+                  padding: "3% 6%",
+                  marginTop:'20px',
+                  
                 }}
               >
                 How it Works
               </Link>
+                </div>
+             
               {/* </div> */}
             </Grid>
           </Grid>
@@ -339,13 +363,13 @@ const Home = () => {
             <Box
               component="img"
               sx={{
-                height: "50vh",
-                // width: "100vw",
-                margin:"20px"
-             
+                // height: "50vh",
+                // // width: "100vw",
+                // margin:"20px",
+                // maxWidth:'100%'
               }}
               alt="The house from the offer."
-              src="https://www.devsnews.com/wp/torun/wp-content/uploads/2019/10/about.jpg"
+              src="./assets/imgs/WhoWeAre.jpg"
 
             />
           </Grid>
@@ -386,56 +410,11 @@ const Home = () => {
             justifyContent="center"
             style={{ marginTop: "3%" }}
           >
-            <span style={{ fontSize: "300%", fontWeight: 600 }}>
+            <span style={{ fontSize: "200%", fontWeight: 600 }}>
             We offer top-notch services <br/> for your business
             </span>
           </Grid>
-          <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "stretch" , justifyContent:'center'}}>
-      {servicesCards.map( card => (
-            <Grid item xs={12} sm={6} md={4} align="center">
-            
-              <Card maxWidth="lg" style={{padding:"5%",boxShadow: "none",borderRadius:10,height: '93%' }}>
-              <CardContent>
-              <Box
-                component="img"
-                src={card.src}
-                style={{marginTop:"8%",marginBottom:"8%",height:'100%'}}
-              />
-                <Box style={{marginBottom:"8%"}}>
-                  <Typography variant="h5" style={{fontWeight:"bolder"}}>
-                    {card.title}
-                  </Typography>
-                </Box>
-                {/* <ul> */}
-                <span style={{lineHeight:"26pt"}}>
-                {card.description}
-                </span>
-                  {/* {card.description.map((line) => (
-                    <Typography
-                      component="li"
-                      variant="subtitle1"
-                      align="center"
-                      key={line}
-                    >
-                      {line}
-                    </Typography>
-                  ))} */}
-                {/* </ul> */}
-              </CardContent>
-              <CardActions>
-                <Grid container justify="center">
-                  <NavLink to={`/service/${card.slug}`} style={{width:'100%', textDecoration:'none'}}>
-                      <Button className={classes.button} size="large" variant="outlined" endIcon={<ArrowRightAltIcon />}>
-                        Read More
-                      </Button>
-                  </NavLink>
-                </Grid>
-              </CardActions>
-            </Card>
-            
-            </Grid>
-      ))}
-      </Grid>
+          <ServiceCards/>
         </Container>
       </Box>
 
@@ -521,7 +500,7 @@ const Home = () => {
             justifyContent="center"
             style={{ marginTop: "3%" }}
           >
-            <span style={{ fontSize: "300%", fontWeight: 600 }}>
+            <span style={{ fontSize: "200%", fontWeight: 600 }}>
               Our Latest Case <br /> Studies{" "}
             </span>
           </Grid>
@@ -556,13 +535,16 @@ const Home = () => {
         modules={[Pagination2,Navigation]}
         className="mySwiperCase"
       >
-            {caseStudyCards.map((card) => (
-              <SwiperSlide>
+            {caseStudies.map((project) => (
+              (<SwiperSlide >
               
-                <ProjectCard/>
+                <ProjectCard project={project}/>
           
-              </SwiperSlide>
+              </SwiperSlide>)
             ))}
+            
+           
+            
             </Swiper>
           </Grid>
         </Container>
@@ -572,17 +554,17 @@ const Home = () => {
 
       {/* -------------- Testimonials section -------------------------- */}
 
-      <Container maxWidth="lg">
+      {/* <Container maxWidth="lg">
         <Grid
           container
           //spacing={9}
           style={{ display: "flex", alignItems: "center" }}
         >
           <Grid item xs={12} sm={6} md={6} align="left">
-            {/* <Typography>  */}
+            
             <DividerWithText>TESTIMONIALS</DividerWithText>
             <div style={{ margin: "5%" }}></div>
-            <span style={{ fontSize: "300%", fontWeight: "bold" }}>
+            <span style={{ fontSize: "200%", fontWeight: "bold" }}>
               What Our Client’s Say About us{" "}
             </span>{" "}
             <br /> <br />
@@ -629,7 +611,7 @@ const Home = () => {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
 
       {/* ---------------- testimonials section end --------------------- */}
    
@@ -648,6 +630,7 @@ const Home = () => {
             marginBottom: "3%",
             display: "flex",
             alignItems: "center",
+            gap:'10px'
           }}
         >
           <Grid item xs={12} sm={12} md={5} align="left">
@@ -758,6 +741,7 @@ const Home = () => {
                       marginTop: "35px",
                       marginBottom: "35px",
                       flexWrap: "wrap",
+                      height:'100%'
                     }}
                   >
                     <CardMedia
@@ -765,12 +749,14 @@ const Home = () => {
                       sx={{}}
                       image={blog.img1}
                       alt="Live from space album cover"
+                      style={{aspectRatio:'2'}}
                     />
                     <Box
                       sx={{
                         display: "flex",
                         flexDirection: "column",
                         marginLeft: "4%",
+                        marginRight: "4%",
                         paddingTop: "3%",
                         paddingBottom: "2.5%",
                         width: "100%",
@@ -795,7 +781,7 @@ const Home = () => {
                           <span style={{ color: PrimaryColor, marginRight: "1%" }}>
                             <PersonOutlineOutlinedIcon />
                           </span>
-                          Buythatfits
+                          Relish 
                         </Typography>
                         <Typography
                           style={{
@@ -826,14 +812,15 @@ const Home = () => {
                       </Box>
                       <CardContent sx={{ flex: "1 0 auto", padding: "1%" }}>
                         <Typography
-                          style={{ fontWeight: "bold", fontSize: "150%" }}
+                          style={{ fontWeight: "bold", fontSize: "150%", minHeight:'108px' }}
                         >
                           {blog.title}
                         </Typography>
                         <Typography
-                          style={{ marginTop: "20px", color: "grey" }}
+                          style={{ marginTop: "6px", color: "grey",textAlign:'justify',overflow: 'hidden',
+                          textOverflow: 'ellipsis', maxHeight:'90px' }}
                         >
-                          {blog.content}
+                          {blog.highlight_quote}
                         </Typography>
                       </CardContent>
                     </Box>

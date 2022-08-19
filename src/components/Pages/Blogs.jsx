@@ -320,7 +320,7 @@ const Blogs = () => {
       {blog.title}
       </Typography>
       <Typography style={{marginTop:"20px",color:"grey"}}>
-      {/* {blog.content} */}
+      {blog.highlight_quote}
       </Typography>
       </CardContent>
 

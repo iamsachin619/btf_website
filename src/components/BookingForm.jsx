@@ -10,13 +10,26 @@ import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutl
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
-import { ContactUS } from './../api';
+import { ContactUS,BookAppointment } from '../api';
 import { useState } from 'react';
 import PrimaryColor from '../env';
+
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 const theme = createTheme();
 
-export default function ContactForm() {
+export default function BookingForm() {
+  const today = new Date();
+  let initDate = new Date()
+  initDate.setMinutes(0)
+  initDate.setHours(0)
+  initDate.setDate(initDate.getDate()+1)
 
+  const [value, setValue] = React.useState(initDate);//date
+  const [valueT, setValueT] = useState(null)//time
   const [emailError, setEmailError] = useState('')
   const [nameError, setNameError] = useState('')
   const [subjectError, setSubjectError] = useState('')
@@ -68,34 +81,46 @@ export default function ContactForm() {
       name: data.get('name'),
       email: data.get('email'),
       subject: data.get('subject'),
-      message:data.get('message')
+      message:data.get('message'),
+      scheduled_date:value.toISOString().split('T')[0],
+      scheduled_time:`${value.getHours()}:${value.getMinutes()}`,
+      phone:'45454454'
     };
-    const resp = await ContactUS(body)
+
+    const resp = await BookAppointment(body)
     if(resp.status === 208)
       setRepeatError("Already contacted")
     if(resp.status === 200)
-      SetSubmitSucess("Contacted Successfully")
-    document.getElementById("name").value = ""
-    document.getElementById("email").value = ""
-    document.getElementById("subject").value = ""
-    document.getElementById("message").value = ""
-
+      SetSubmitSucess("Booking Scheduled Successfully")
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("subject").value = ""
+      document.getElementById("message").value = ""
+      setValue(null)
+      setValueT(null)
   };
 }
 
   return (
     <ThemeProvider theme={theme}>
       <Container component="main">
+      {submitSucess !== '' && <Grid 
+              item xs={12} sm={12} md={12} 
+              style={{marginTop:"5%"}}
+              align="center">
+            <Alert severity="success">{submitSucess}</Alert>
+            </Grid>
+            }
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 3,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Grid container spacing={2} >
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
@@ -161,10 +186,46 @@ export default function ContactForm() {
                 />
                 <span style={{color:"red"}}>{messageError}</span>
               </Grid>
+              
+              <Grid item xs={12} sm={6}>
+              
+              <LocalizationProvider dateAdapter={AdapterDateFns} style={{width:"100%"}}>
+                <DatePicker
+                  minutesStep={30}
+                  disablePast={true}
+                  disableHighlightToday={true}
+                  minDate={today.setDate(today.getDate() + 1)}
+                  renderInput={(props) => <TextField {...props} style={{width:"100%"}}/>}
+                  label="Pick Date for appointment"
+                  value={value}
+                  onChange={(newValue) => {
+                    setValue(newValue);
+                  }}
+                />
+              </LocalizationProvider>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+              
+              <LocalizationProvider dateAdapter={AdapterDateFns} style={{width:"100%"}}>
+                <TimePicker
+                  minutesStep={30}
+                  disablePast={true}
+                  
+                 
+                  renderInput={(props) => <TextField {...props} style={{width:"100%"}}/>}
+                  label="Pick Time for appointment"
+                  value={valueT}
+                  onChange={(newValue) => {
+                    setValueT(newValue);
+                  }}
+                />
+              </LocalizationProvider>
+              </Grid>
+
             </Grid>
             <Grid item xs={12} sm={12} md={12} align="center">
             <Button type="submit" style={{marginTop:"4%",backgroundColor:PrimaryColor,color:"white",fontWeight:600,paddingLeft:"4%",paddingRight:"4%",paddingTop:"2%",paddingBottom:"2%"}} size="large">
-                  SEND MESSAGE
+                  BOOK APPOINTMENT
             </Button>
             </Grid>
 
@@ -176,13 +237,7 @@ export default function ContactForm() {
             </Grid>
             }
 
-          {submitSucess !== '' && <Grid 
-              item xs={12} sm={12} md={12} 
-              style={{marginTop:"5%"}}
-              align="center">
-            <Alert severity="success">{submitSucess}</Alert>
-            </Grid>
-            }
+          
 
           </Box>
         </Box>

@@ -21,7 +21,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Pagination from '@mui/material/Pagination';
 import { styled } from '@mui/material/styles';
-import { GetComments } from "../../api";
+import { GetComments, GetTagsData } from "../../api";
 import {
   Facebook,
   GooglePlus,
@@ -118,27 +118,28 @@ const Blog = () => {
   const location = useLocation()
   const classes = useStyles()
   const [markData, setMarkData] = useState('')
+  const [tags, setTags] = useState([])
 
-
-  useEffect(() => {
+  useEffect(async () => {
     
-      fetch('https://raw.githubusercontent.com/matiassingers/awesome-readme/master/readme.md')
-      .then(response => response.text())
-      .then(data => {
-        // Do something with your data
-        setMarkData(data);
-      });
-    });
+    const tagNames = await GetTagsData(location.state.blog.tags)
+    console.log({tagNames})
+    setTags(tagNames)
+    },[]);
 
 
-  useEffect(() => {
+  useEffect( () => {
 
   
 
-    console.log(location.state.blog)
+    console.log(location.state.blog.tags)
+   
     setBlog(location.state.blog)
     document.getElementById('blog-post-bg').backgroundImage = location.state.blog.img1
     const fetchData = async () => {
+      
+      
+
       const resp = await GetComments(location.state.blog.uuid)
       if(resp.status === 200)   
         setComments(resp.data)
@@ -191,9 +192,9 @@ const Blog = () => {
                     {title}
                   </span> 
                   <div style={{margin:"1%"}}></div>
-                  <span style={{color:"white",fontSize:"120%",fontWeight:"bold"}}>
+                  {/* <span style={{color:"white",fontSize:"120%",fontWeight:"bold"}}>
                     Home || image || {title}
-                  </span> 
+                  </span>  */}
             </Grid>
           </Grid>
       </Container>
@@ -202,7 +203,7 @@ const Blog = () => {
 {blog !== null && 
 <>
 <Container maxWidth="lg">
-  <div style={{textAlign:'left'}}>
+  <div style={{textAlign:'left'}} className='blogMdContainer'>
     {/* <Markdown>{markData}</Markdown> */}
     <Markdown>{blog.content}</Markdown>
   </div>
@@ -262,7 +263,7 @@ const Blog = () => {
      
       {/* <Container maxWidth="md" >
         <Grid container maxWidth="xs" justifyContent="center" style={{marginTop:"3%"}}>
-          <span style={{fontSize:"300%",fontWeight:600}}>
+          <span style={{fontSize:"200%",fontWeight:600}}>
           {blog.title}
           </span>     
         </Grid>
@@ -312,7 +313,7 @@ const Blog = () => {
          Post Tags
           </span>   
           <div style={{marginLeft:"120%",marginTop:"1%"}}></div> 
-          {blog !== null && blog.tags.map( tag => 
+          {blog !== null && tags.map( tag => 
             <Button className={classes.button} size="large" variant="outlined">
             {tag}
           </Button>

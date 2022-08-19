@@ -161,6 +161,9 @@ export default function Footer() {
               
               
               <Button
+                component={'a'}
+                href="https://www.linkedin.com/company/relishdevelopers"
+                target='_blank'
                 disableRipple
                 style={{
                   backgroundColor: "transparent",
@@ -169,7 +172,7 @@ export default function Footer() {
                 startIcon={<LinkedInIcon style={{ color: PrimaryColor }} />}
               >
                 <span style={{ fontSize: "120%" }}>
-                  Relish <br />{" "}
+                /relishdevelopers <br />{" "}
                 </span>
               </Button>
               <div style={{ margin: "3%" }}></div>
@@ -181,7 +184,7 @@ export default function Footer() {
                 }
               >
                 <span style={{ fontSize: "120%" }}>
-                  +812 (345) 789 88 <br />{" "}
+                  +91 75659 81836 <br />{" "}
                 </span>
               </Button>
               <div style={{ margin: "3%" }}></div>
@@ -207,7 +210,7 @@ export default function Footer() {
                 startIcon={<LocationOnOutlinedIcon style={{ color: PrimaryColor }} />}
               >
                 <span style={{ fontSize: "120%" }}>
-                  227 Marion Street, Columbia <br />
+                  Greater Noida, IN <br />
                 </span>
               </Button>
             </Grid>
@@ -257,10 +260,10 @@ export default function Footer() {
                 </Link>
                 <br />
                 <Link
-                  to="/service/Web"
+                  to="/service/MVP"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Web Development
+                  MVP
                 </Link>
                 <br />
               </span>

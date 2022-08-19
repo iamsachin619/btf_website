@@ -12,6 +12,27 @@ body{
   transition-delay: 0.25s;
 }
 
+.howItWorks{
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+  /* transition: all 0.25s ; */
+}
+
+.howItWorks:hover{
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.2)
+}
+
+.serviceIcons {
+  filter: invert(26%) sepia(100%) saturate(1570%) hue-rotate(174deg) brightness(98%) contrast(98%);
+}
+
+.md-service h1 {
+  text-align: left;
+}
+
+.blogMdContainer img {
+  width: 100%;
+}
+
 @media (min-width:1250px){
   .swiper-button-next{
     

@@ -34,6 +34,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
     Twitter,
   } from "@trejgun/material-ui-icons-social-networks";
   import PrimaryColor from '../../env';
+import ServiceCards from '../ServiceCards';
   const useStyles = makeStyles({
     button: {
       // backgroundColor: '#3c52b2',
@@ -126,8 +127,9 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
     backgroundSize: "cover",
     display: "grid",
    placeItems: "center",
-    backgroundImage: `url("https://blog.wiser.com/wp-content/uploads/2015/08/how-buy-one-get-one-can-improve-sales-1074x302@2xC-1296x364.png")`
-      }}
+   backgroundImage:'url(./assets/BannerImages/ServicesPage.jpg)',
+   boxShadow:'inset 0 0 0 2000px rgba(0, 0, 0, 0.6)'
+   }}
     >
       <Container maxWidth="lg">
       <Grid container  style={{display: "flex", alignItems: "center" }}>
@@ -161,54 +163,9 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
           </DividerWithTextInBetween>         
         </Grid>
         <Grid container maxWidth="lg" justifyContent="center" style={{marginTop:"3%"}}>
-          <span style={{fontSize:"300%",fontWeight:600}}>We provide exclusive services <br/> for your bussiness  </span>     
+          <span style={{fontSize:"200%",fontWeight:600}}>We provide exclusive services <br/> for your bussiness  </span>     
         </Grid>
-      <Grid container align="left" spacing={4} style={{marginTop:"5%",display: "flex", alignItems: "center" , justifyContent:'center'}}>
-      {servicesCards.map( card => (
-            <Grid item xs={12} sm={6} md={4} align="center">
-            
-              <Card maxWidth="lg" style={{padding:"5%",boxShadow: "none",borderRadius:10}}>
-              <CardContent>
-              <Box
-                component="img"
-                src={card.src}
-                style={{marginTop:"8%",marginBottom:"8%"}}
-              />
-                <Box style={{marginBottom:"8%"}}>
-                  <Typography variant="h5" style={{fontWeight:"bolder"}}>
-                    {card.title}
-                  </Typography>
-                </Box>
-                {/* <ul> */}
-                <span style={{lineHeight:"26pt"}}>
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking.
-                </span>
-                  {/* {card.description.map((line) => (
-                    <Typography
-                      component="li"
-                      variant="subtitle1"
-                      align="center"
-                      key={line}
-                    >
-                      {line}
-                    </Typography>
-                  ))} */}
-                {/* </ul> */}
-              </CardContent>
-              <CardActions>
-                <Grid container justify="center">
-                  <NavLink to={`/service/${card.slug}`} style={{width:'100%', textDecoration:'none'}}>
-                      <Button className={classes.button} size="large" variant="outlined" endIcon={<ArrowRightAltIcon />}>
-                        Read More
-                      </Button>
-                  </NavLink>
-                </Grid>
-              </CardActions>
-            </Card>
-            
-            </Grid>
-      ))}
-      </Grid>
+      <ServiceCards/>
       </Container>
       </Box>
         {isMobile ? (

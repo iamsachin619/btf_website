@@ -121,20 +121,23 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
       style={{
         marginTop:"5%",
         height: "50vh",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    display: "grid",
-    placeItems: "center",
-    backgroundImage: `url("https://blog.wiser.com/wp-content/uploads/2015/08/how-buy-one-get-one-can-improve-sales-1074x302@2xC-1296x364.png")`
-      }}
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        display: "grid",
+        placeItems: "center",
+        
+        backgroundImage: `url(../assets/BannerImages/${isMobile?'SquareImages/'+data.simg:data.img})`,
+        boxShadow:'inset 0 0 0 2000px rgba(0, 0, 0, 0.6)'
+          }}
     >
+     {console.log({isMobile},data.simg)}
       <Container maxWidth="lg">
           <Grid container spacing={5} style={{display: "flex", alignItems: "center" }}>
-         
+          
             
                   {/* <span style={{color:"white",fontSize:"350%",fontWeight:"bold"}}>
-                    {data.title}
+                    
                   </span> 
                   <div style={{margin:"1%"}}></div>
                   <span style={{color:"white",fontSize:"120%",fontWeight:"bold"}}>
@@ -207,10 +210,10 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
                 </Link>
                 <br />
                 <Link
-                  to="/service/Web"
-                  style={{ textDecoration: "none", color:  path=="/service/Web"?"blue":'black' }}
+                  to="/service/MVP"
+                  style={{ textDecoration: "none", color:  path=="/service/MVP"?"blue":'black' }}
                 >
-                  Web Development
+                  MVP
                 </Link>
                 <br />
               </span>
@@ -220,15 +223,16 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
         
         <Grid className='presentService'  lg={8} style={{padding:'3%', paddingTop:'0px'}}>
           {/* <Grid  maxWidth="lg" justifyContent="left" style={{marginTop:"0%",textAlign:'left'}}>
-            <span style={{fontSize:"300%",fontWeight:600}}>{data.title}  </span>     
+            <span style={{fontSize:"200%",fontWeight:600}}>{data.title}  </span>     
           </Grid> */}
           {/* <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%"}}>
               <img src={data.img1} style={{width:"100%",height:"100%"}}/>
           </Grid> */}
+          
           <Grid  maxWidth="lg" justifyContent="center" style={{marginTop:"2%", textAlign:'justify'}}>
             {data.content.split('\n').map((text)=>{
              
-              return (<div style={{marginBottom:'15px'}}><Markdown>{text}</Markdown></div>)
+              return (<div className='md-service' style={{marginBottom:'15px'}}><Markdown>{text}</Markdown></div>)
             })}
              
           </Grid>
@@ -279,10 +283,10 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
                 </Link>
                 <br />
                 <Link
-                  to="/service/Web"
-                  style={{ textDecoration: "none", color:  path=="/service/Web"?"blue":'black' }}
+                  to="/service/MVP"
+                  style={{ textDecoration: "none", color:  path=="/service/MVP"?"blue":'black' }}
                 >
-                  Web Development
+                  MVP
                 </Link>
                 <br />
               </span>
