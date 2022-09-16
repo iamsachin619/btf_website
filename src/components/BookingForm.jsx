@@ -208,7 +208,7 @@ export default function BookingForm() {
               
               <LocalizationProvider dateAdapter={AdapterDateFns} style={{width:"100%"}}>
                 <TimePicker
-                  minutesStep={30}
+                  minutesStep={15}
                   disablePast={true}
                   
                  

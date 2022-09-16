@@ -269,6 +269,7 @@ const NavBar = (props) => {
                       to="/contact-us"
                       variant="contained"
                       component={Link}
+                      
                       endIcon={<ArrowRightAltIcon />}
                       style={{
                         marginLeft: "20px",
